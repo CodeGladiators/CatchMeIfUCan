@@ -4,9 +4,9 @@ Help the police catch the biggest thief of the world
 
 *Features* 
 
-*Single and Multiplayer modes
-*Different levels in singleplayer modes
-*Excellent tutorial for binary search
+1.Single and Multiplayer modes
+2.Different levels in singleplayer modes
+3.Excellent tutorial for binary search
 
 
 *Basic Story :*
