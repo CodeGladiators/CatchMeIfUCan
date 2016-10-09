@@ -1,9 +1,10 @@
 #Greenfoot properties
-#Sun Oct 09 08:00:00 PDT 2016
+#Sun Oct 09 08:16:19 PDT 2016
 class.GamePlay.superclass=GameWorld
 class.House.superclass=greenfoot.Actor
 target4.type=ClassTarget
 class.Thief.superclass=greenfoot.Actor
+class.WoodenHut.image=WoodenHut.png
 target3.height=50
 class.GameWorld.image=game_background.jpg
 target5.height=50
@@ -24,6 +25,7 @@ target5.name=UserScore
 class.UserScore.superclass=greenfoot.Actor
 version=2.8.0
 target6.type=ClassTarget
+class.WoodenHut.superclass=House
 class.GameMenu.image=game_background.jpg
 target7.width=90
 target1.width=90
