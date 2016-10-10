@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Instructions
+comment0.text=\r\n\ Write\ messages\ on\ the\ screen.\r\n\ \r\n\ @author\ Ashutosh\ Singh\r\n\ @email\ ashutosh.singh@sjsu.edu\r\n\ @version\ 9/16/16\r\n
+comment1.params=
+comment1.target=Instructions()
+comment2.params=text
+comment2.target=void\ Update(java.lang.String)
+comment2.text=\r\n\ Update\ the\ messages\ on\ the\ screen.\r\n
+numComments=3
