@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=MoveWithArrows
+comment0.text=\r\n\ Moves\ actor\ passed\ with\ the\ arrow\ keys.\ Expects\ an\ argument\ actor\r\n\ \r\n\ @author\ Ashutosh\ Singh\ \r\n\ @version\ 10/9/2016\r\n
+comment1.params=a
+comment1.target=MoveWithArrows(greenfoot.Actor)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MoveWithArrows\r\n
+comment2.params=speed
+comment2.target=void\ Move(int)
+numComments=3
