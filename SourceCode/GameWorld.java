@@ -16,7 +16,7 @@ public class GameWorld extends World
     public GameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1024, 768, 1); 
         prepare();
     }
 
@@ -25,13 +25,19 @@ public class GameWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {
-        House[] houses=new House[5];
+    {House[] houses = new House[7];
+        House sampleHouse = new House();
+        int x = sampleHouse.getImage().getWidth()/2;
+        int y = sampleHouse.getImage().getHeight()/2;
+
         for (int i=0;i<houses.length;i++){
-            houses[i]=new House();
-            int X= Greenfoot.getRandomNumber(getWidth());    
-            int Y= Greenfoot.getRandomNumber(getHeight());
-            addObject(houses[i],X,Y);
+            houses[i] = new House();
+            addObject(houses[i],x ,y);
+            x += sampleHouse.getImage().getWidth() + 10;
+            if(x > getWidth()-sampleHouse.getImage().getWidth()){
+                y += sampleHouse.getImage().getHeight() + 10;
+                x -= sampleHouse.getImage().getWidth() + 10;
+            }         
         }
     }
 }
