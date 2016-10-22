@@ -12,6 +12,8 @@ public class House extends Actor
     private int houseNumber;
     private float moneyStored;
     private boolean thiefLooted;
+    private int X;
+    private int Y;
 
     public House(){
     }
@@ -22,6 +24,28 @@ public class House extends Actor
      */
     public void act() 
     {
+
         // Add your action code here.
     }    
+
+    public void setX(int x)
+    {
+        X=x;
+    }
+
+    public void setY(int y)
+    {
+        Y=y;
+    }
+
+    public int getX()
+    {
+        return X;
+    }
+
+    public int getY()
+    {
+        return Y;
+    }
+
 }
