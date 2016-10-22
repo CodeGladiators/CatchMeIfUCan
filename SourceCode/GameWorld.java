@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameWorld extends World
 {
-
+    private Counter actCounter;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -17,9 +17,16 @@ public class GameWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 768, 1); 
-        prepare();
-    }
-
+        prepare();       
+        actCounter = new Counter("Hours Left: ");
+        addObject(actCounter, 80, 20);
+      }
+     
+    public void act()
+      {
+          actCounter.setValue(actCounter.getValue());
+      }
+ 
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
