@@ -38,6 +38,22 @@ public class House extends Actor
         Y=y;
     }
 
+    public void setNumber(int num){
+        houseNumber=num;
+    }
+
+    public void setMoney(float money){
+        moneyStored=money;
+    }
+
+    public Float getMoney(){
+        return moneyStored;
+    }
+
+    public int getNumber(){
+        return houseNumber;
+    }
+
     public int getX()
     {
         return X;

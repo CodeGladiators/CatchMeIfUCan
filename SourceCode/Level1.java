@@ -55,35 +55,52 @@ public class Level1 extends World
         houses.add(new House(){{
                     setX(134);
                     setY(63);
+                    setNumber(1);
+                    setMoney(1000);
                 }});
         houses.add(new House(){{
                     setX(357);
                     setY(53);
+                    setNumber(2);
+                    setMoney(1500);
                 }});
         houses.add(new House(){{
                     setX(589);
                     setY(60);
+                    setNumber(3);
+                    setMoney(2000);
                 }});
         houses.add(new House(){{
                     setX(814);
                     setY(58);
+                    setNumber(4);
+                    setMoney(2500);
                 }});
         houses.add(new House(){{
                     setX(953);
                     setY(261);
+                    setNumber(5);
+                    setMoney(10000);
                 }});
         houses.add(new House(){{
                     setX(710);
                     setY(257);
+                    setNumber(6);
+                    setMoney(24000);
                 }});
         houses.add(new House(){{
                     setX(455);
                     setY(273);
+                    setNumber(7);
+                    setMoney(25000);
                 }});
 
         for(Iterator<House> i = houses.iterator(); i.hasNext(); ) {
             House house = i.next();
             addObject(house,house.getX() ,house.getY());
+            Counter houseCounter = new Counter(Float.toString(house.getMoney()));
+            addObject(houseCounter, house.getX(), house.getY()-25);
+
         }
 
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
