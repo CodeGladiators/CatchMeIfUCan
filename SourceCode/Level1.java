@@ -31,7 +31,7 @@ public class Level1 extends World
      */
     private void prepare()
     {
-        actCounter.setValue(actCounter.getValue());
+        //actCounter.setValue(actCounter.getValue());
         List houses=new ArrayList<House>();
         List trees=new ArrayList<Tree>();
 
