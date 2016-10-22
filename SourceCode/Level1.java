@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class Level1 extends World
 {
+    public Counter actCounter;
 
     /**
      * Constructor for objects of class Level1.
@@ -20,6 +21,8 @@ public class Level1 extends World
         super(1024, 768, 1); 
 
         prepare();
+        actCounter = new Counter("Hours Left: ");
+        addObject(actCounter, 80, 20);
     }
 
     /**
@@ -28,6 +31,7 @@ public class Level1 extends World
      */
     private void prepare()
     {
+        actCounter.setValue(actCounter.getValue());
         List houses=new ArrayList<House>();
         List trees=new ArrayList<Tree>();
 

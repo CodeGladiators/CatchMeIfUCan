@@ -19,6 +19,8 @@ public class GameWorld extends World
         super(1024, 768, 1); 
         prepare();
         Greenfoot.setWorld(new Level1());
+  
+
     }
 
     /**
