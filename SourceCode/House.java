@@ -11,7 +11,8 @@ public class House extends Actor
     private Thief thief;
     private int houseNumber;
     private float moneyStored;
-    private boolean thiefLooted;
+    public boolean thiefLooted;
+    public boolean hasThief;
     private int X;
     private int Y;
 
@@ -63,5 +64,5 @@ public class House extends Actor
     {
         return Y;
     }
-
+   
 }

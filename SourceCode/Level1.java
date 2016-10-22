@@ -101,6 +101,17 @@ public class Level1 extends World
             Counter houseCounter = new Counter(Float.toString(house.getMoney()));
             addObject(houseCounter, house.getX(), house.getY()-25);
 
+            if(house.getNumber()==5){
+                house.hasThief=true;
+            }else{
+                house.hasThief=false;
+            }
+
+            if(house.getNumber()>5){
+                house.thiefLooted=true;
+            }else{
+                house.thiefLooted=false;
+            }
         }
 
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
