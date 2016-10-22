@@ -22,7 +22,7 @@ public class Level1 extends World
 
         prepare();
         actCounter = new Counter("Hours Left: ");
-        addObject(actCounter, 80, 20);
+        addObject(actCounter, 900, 20);
     }
 
     /**
