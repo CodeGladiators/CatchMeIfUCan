@@ -2,6 +2,7 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
 >>>>>>>=4b3371c8176eb5b364130222cb7963543ae85f47
+class.Counter.image=Counter.png
 class.Counter.superclass=greenfoot.Actor
 class.Duplex.image=Duplex.png
 class.Duplex.superclass=House
@@ -77,9 +78,9 @@ editor.fx.0.height=700
 editor.fx.0.width=700
 editor.fx.0.x=0
 editor.fx.0.y=0
-editor.swing.0.height=700
-editor.swing.0.width=701
-editor.swing.0.x=0
+editor.swing.0.height=1042
+editor.swing.0.width=1935
+editor.swing.0.x=-11
 editor.swing.0.y=0
 mainWindow.height=1042
 mainWindow.width=1934
