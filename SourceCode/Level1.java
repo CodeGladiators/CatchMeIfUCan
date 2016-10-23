@@ -84,6 +84,7 @@ public class Level1 extends World
         for(Iterator<House> i = houses.iterator(); i.hasNext(); ) {
             House house = i.next();
             addObject(house,house.getX() ,house.getY());
+			//add function to select the random houses from an array of houses
         }
 
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
