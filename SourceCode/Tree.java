@@ -29,12 +29,13 @@ public class Tree extends Actor
         this.y = y;
     }
 
-    public int getX()
+    // renamed as it overrode default Greenfoot getX()
+    public int getXCoordinate()
     {
         return x;
     }
 
-    public int getY()
+    public int getYCoordinate()
     {
         return y;
     }

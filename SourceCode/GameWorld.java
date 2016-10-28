@@ -26,7 +26,8 @@ public class GameWorld extends World
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
-    {House[] houses = new House[7];
+    {
+        House[] houses = new House[7];
         House sampleHouse = new House();
         int x = sampleHouse.getImage().getWidth()/2;
         int y = sampleHouse.getImage().getHeight()/2;

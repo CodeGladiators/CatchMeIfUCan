@@ -43,7 +43,6 @@ public class Level1 extends World
                     setX(105);
                     setY(724);
                 }});
-
         trees.add(new PineTree(){{
                     setX(200);
                     setY(724);
@@ -60,7 +59,6 @@ public class Level1 extends World
                     setX(346);
                     setY(505);
                 }});
-
         houses.add(new House(){{
                     setX(134);
                     setY(63);
@@ -92,13 +90,13 @@ public class Level1 extends World
 
         for(Iterator<House> i = houses.iterator(); i.hasNext(); ) {
             House house = i.next();
-            addObject(house,house.getX() ,house.getY());
+            addObject(house,house.getXCoordinate() ,house.getYCoordinate());
             //add function to select the random houses from an array of houses
         }
 
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
             Tree tree = i.next();
-            addObject(tree,tree.getX() ,tree.getY());
+            addObject(tree,tree.getXCoordinate() ,tree.getYCoordinate());
         }
 
         Police police = new Police();
