@@ -16,15 +16,13 @@ public class Police extends Actor
     public void act() 
     {
         checkKeys();
-        //lookForGras();
-        //lookForBug();
     }    
-    
+
     public void checkKeys()
     {
         if(Greenfoot.isKeyDown("up"))
         {
-            move(3);
+            move(4);
         }
         if(Greenfoot.isKeyDown("right"))
         {
@@ -34,5 +32,9 @@ public class Police extends Actor
         {
             turn(-2);
         }
+        if(Greenfoot.isKeyDown("down"))
+        {
+            move(-2);
+        }
     }
-    }
+}

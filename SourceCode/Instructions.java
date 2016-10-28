@@ -12,8 +12,7 @@ public class Instructions extends Actor
     private int score;
 
     public Instructions(){
-
-        setImage(new GreenfootImage("Drag coin over machine to start",28,Color.BLACK,Color.WHITE));
+        setImage(new GreenfootImage("SOME TEXT",28,Color.BLACK,Color.WHITE));
     }
 
     /**

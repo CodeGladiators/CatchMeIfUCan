@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tree extends Actor
 {
-    private int X;
-    private int Y;
+    private int x;
+    private int y;
     /**
      * Act - do whatever the Tree wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,25 +18,25 @@ public class Tree extends Actor
     {
         // Add your action code here.
     }    
-    
-        public void setX(int x)
+
+    public void setX(int x)
     {
-        X=x;
+        this.x = x;
     }
 
     public void setY(int y)
     {
-        Y=y;
+        this.y = y;
     }
 
     public int getX()
     {
-        return X;
+        return x;
     }
 
     public int getY()
     {
-        return Y;
+        return y;
     }
 
 }

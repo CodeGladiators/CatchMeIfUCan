@@ -18,7 +18,6 @@ public class ScreenInstructions extends Actor
     public ScreenInstructions(){   
     }
   
-
     public void UpdateImage(String text){
         GreenfootImage img = getImage();
         img.drawString(text,4,20);

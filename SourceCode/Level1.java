@@ -17,9 +17,9 @@ public class Level1 extends World
      */
     public Level1()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1024x768 cells with a cell size of 1x1 pixels.
         super(1024, 768, 1); 
-
+        // prepare level 1
         prepare();
         actCounter = new Counter("Hours Left: ");
         addObject(actCounter, 900, 20);
@@ -32,8 +32,8 @@ public class Level1 extends World
     private void prepare()
     {
         //actCounter.setValue(actCounter.getValue());
-        List houses=new ArrayList<House>();
-        List trees=new ArrayList<Tree>();
+        List houses = new ArrayList<House>();
+        List trees = new ArrayList<Tree>();
 
         trees.add(new FigTree(){{
                     setX(983);
@@ -41,6 +41,15 @@ public class Level1 extends World
                 }});
         trees.add(new PineTree(){{
                     setX(105);
+                    setY(724);
+                }});
+
+        trees.add(new PineTree(){{
+                    setX(200);
+                    setY(724);
+                }});
+        trees.add(new PineTree(){{
+                    setX(230);
                     setY(724);
                 }});
         trees.add(new PineTree(){{
@@ -58,15 +67,15 @@ public class Level1 extends World
                 }});
         houses.add(new House(){{
                     setX(357);
-                    setY(53);
+                    setY(63);
                 }});
         houses.add(new House(){{
                     setX(589);
-                    setY(60);
+                    setY(63);
                 }});
         houses.add(new House(){{
                     setX(814);
-                    setY(58);
+                    setY(63);
                 }});
         houses.add(new House(){{
                     setX(953);
@@ -84,17 +93,15 @@ public class Level1 extends World
         for(Iterator<House> i = houses.iterator(); i.hasNext(); ) {
             House house = i.next();
             addObject(house,house.getX() ,house.getY());
-			//add function to select the random houses from an array of houses
+            //add function to select the random houses from an array of houses
         }
 
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
             Tree tree = i.next();
             addObject(tree,tree.getX() ,tree.getY());
         }
-        
-        
+
         Police police = new Police();
         addObject(police,100,100);
-        
     }
 }

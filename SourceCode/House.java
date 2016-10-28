@@ -14,7 +14,7 @@ public class House extends Actor
     private boolean thiefLooted;
     private int X;
     private int Y;
-//yet to add house properties hasthief
+    //yet to add house properties has thief
     public House(){
     }
 
