@@ -11,7 +11,8 @@ public class House extends Actor
     private Thief thief;
     private int houseNumber;
     private float moneyStored;
-    private boolean thiefLooted;
+    public boolean thiefLooted;
+    public boolean hasThief;
     private int x;
     private int y;
     //yet to add house properties has thief
@@ -36,6 +37,22 @@ public class House extends Actor
     public void setY(int y)
     {
         this.y = y;
+    }
+
+    public void setNumber(int num){
+        houseNumber=num;
+    }
+
+    public void setMoney(float money){
+        moneyStored=money;
+    }
+
+    public Float getMoney(){
+        return moneyStored;
+    }
+
+    public int getNumber(){
+        return houseNumber;
     }
 
     // renamed as it overrode default Greenfoot getX()
