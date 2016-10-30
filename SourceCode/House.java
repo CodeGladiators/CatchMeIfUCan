@@ -15,6 +15,7 @@ public class House extends Actor
     public boolean hasThief;
     private int x;
     private int y;
+    private int count=0;
     private Actor policeRemoved=null;
     //yet to add house properties has thief
     public House(){
@@ -45,30 +46,35 @@ public class House extends Actor
 
     public void AddCar(){
         //Add car outside the house once arrow key is pressed
-        if(policeRemoved!=null){
+        if(policeRemoved!=null && count>50){
             //System.out.println("Car appears");
             getWorld().addObject(policeRemoved,getX(),getY()+50);
             policeRemoved=null;
+            count=0;
         }
 
     }
 
     public void checkKeys()
     {
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("up") && policeRemoved!=null)
         {
+            count++;
             AddCar();
         }
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("right") && policeRemoved!=null)
         {
+            count++;
             AddCar();
         }
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left") && policeRemoved!=null)
         {
+            count++;
             AddCar();
         }
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("down") && policeRemoved!=null)
         {
+            count++;
             AddCar();
         }
     }
