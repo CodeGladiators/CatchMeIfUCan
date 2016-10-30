@@ -27,9 +27,10 @@ public class House extends Actor
     public void act() 
     {
 
-        // Add your action code here.
+        // Check if arrow keys are pressed
         checkKeys();
 
+        // Remove car if it is inside house
         Actor car;
         car=getOneObjectAtOffset(0,0,Police.class);
 
@@ -43,7 +44,7 @@ public class House extends Actor
     }    
 
     public void AddCar(){
-        //System.out.println(policeRemoved==null);
+        //Add car outside the house once arrow key is pressed
         if(policeRemoved!=null){
             //System.out.println("Car appears");
             getWorld().addObject(policeRemoved,getX(),getY()+50);

@@ -24,4 +24,6 @@ comment7.text=\r\n\ Sets\ a\ text\ prefix\ that\ should\ be\ displayed\ before\r
 comment8.params=
 comment8.target=void\ updateImage()
 comment8.text=\r\n\ Update\ the\ image\ on\ screen\ to\ show\ the\ current\ value.\r\n
-numComments=9
+comment9.params=
+comment9.target=void\ updateHouseCounter()
+numComments=10

@@ -38,7 +38,7 @@ public class Counter extends Actor
     private int value;
     private int target;
     private String prefix;
-    
+
     public Counter()
     {
         this(new String());
@@ -55,7 +55,7 @@ public class Counter extends Actor
         this.prefix = prefix;
         updateImage();
     }
-    
+
     /**
      * Animate the display to count up (or down) to the current target value.
      */
@@ -97,7 +97,7 @@ public class Counter extends Actor
         value = newValue;
         updateImage();
     }
-    
+
     /**
      * Sets a text prefix that should be displayed before
      * the counter value (e.g. "Score: ").
@@ -115,14 +115,30 @@ public class Counter extends Actor
     {
         GreenfootImage image = new GreenfootImage(background);
         GreenfootImage text = new GreenfootImage(prefix + value+":00 HRS", 22, Color.BLACK, transparent);
-        
+
         if (text.getWidth() > image.getWidth() - 20)
         {
             image.scale(text.getWidth() + 20, image.getHeight());
         }
-        
+
         image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
-                        (image.getHeight()-text.getHeight())/2);
+            (image.getHeight()-text.getHeight())/2);
         setImage(image);
     }
+
+    public void updateHouseCounter()
+    {
+        GreenfootImage image = new GreenfootImage(background);
+        GreenfootImage text = new GreenfootImage(prefix + value+ "$ " , 22, Color.BLACK, transparent);
+
+        if (text.getWidth() > image.getWidth() - 20)
+        {
+            image.scale(text.getWidth() + 20, image.getHeight());
+        }
+
+        image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
+            (image.getHeight()-text.getHeight())/2);
+        setImage(image);
+    }
+
 }

@@ -31,7 +31,6 @@ public class Level1 extends World
      */
     private void prepare()
     {
-        //actCounter.setValue(actCounter.getValue());
         List houses = new ArrayList<House>();
         List trees = new ArrayList<Tree>();
 
@@ -62,37 +61,46 @@ public class Level1 extends World
         houses.add(new House(){{
                     setX(134);
                     setY(63);
+                    setMoney(1000);
                 }});
         houses.add(new House(){{
                     setX(357);
                     setY(63);
+                    setMoney(5000);
                 }});
         houses.add(new House(){{
                     setX(589);
                     setY(63);
+                    setMoney(10000);
                 }});
         houses.add(new House(){{
                     setX(814);
                     setY(63);
+                    setMoney(50000);
                 }});
         houses.add(new House(){{
                     setX(953);
                     setY(261);
+                    setMoney(100000);
                 }});
         houses.add(new House(){{
                     setX(710);
                     setY(257);
+                    setMoney(500000);
                 }});
         houses.add(new House(){{
                     setX(455);
                     setY(273);
+                    setMoney(1000000);
                 }});
 
+         // Iterate over collection of house objects and init properties
         for(Iterator<House> i = houses.iterator(); i.hasNext(); ) {
             House house = i.next();
             addObject(house,house.getXCoordinate() ,house.getYCoordinate());
-            //add function to select the random houses from an array of houses
+            //add Money Counter
             Counter houseCounter = new Counter(Float.toString(house.getMoney()));
+            houseCounter.updateHouseCounter();
             addObject(houseCounter, house.getX(), house.getY()-25);
 
             if(house.getNumber()==5){
@@ -107,7 +115,9 @@ public class Level1 extends World
                 house.thiefLooted=false;
             }
         }
-
+        
+        
+        // add Trees
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
             Tree tree = i.next();
             addObject(tree,tree.getXCoordinate() ,tree.getYCoordinate());
