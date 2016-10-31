@@ -59,6 +59,7 @@ public class Level2 extends World
         addObject(houses[11],houses[3].getX()-20,houses[8].getY()+y-10);
         addObject(houses[12],houses[2].getX()-30,houses[8].getY()+y-10);
 
-
+        Police police = new Police();
+        addObject(police,150,150);
     }
 }

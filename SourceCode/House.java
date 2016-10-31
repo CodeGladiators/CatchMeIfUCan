@@ -8,17 +8,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class House extends Actor
 {
-    private Thief thief;
     private int houseNumber;
     private float moneyStored;
-    public boolean thiefLooted;
-    public boolean hasThief;
+    private boolean isLooted;
+    private boolean hasThief;
     private int x;
     private int y;
     private int count=0;
     private Actor policeRemoved=null;
     //yet to add house properties has thief
     public House(){
+    }
+
+    public void setIsLooted(boolean isLooted){
+        this.isLooted = isLooted;
+    }
+
+    public boolean isLooted(){
+
+        return isLooted;
+    }
+
+    public void setHasThief(boolean hasThief){
+        this.hasThief = hasThief;
+    }
+
+    public boolean hasThief(){
+        return hasThief;
+    }
+
+    public void setHouseNumber(int houseNumber){
+        this.houseNumber = houseNumber;
+    }
+
+    public int getHouseNumber(){
+        return houseNumber;
     }
 
     /**
@@ -39,10 +63,19 @@ public class House extends Actor
             World world=getWorld();
             policeRemoved=car;
             world.removeObject(car);
+            checkThief();
 
         }
-
     }    
+    public void checkThief(){
+        if(isLooted){
+            System.out.println("You lost 1 hour!!This house has been loooted!!");
+        }else if (!isLooted && hasThief){
+            System.out.println("You Win");
+        } else{
+            System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
+        }    
+    }
 
     public void AddCar(){
         //Add car outside the house once arrow key is pressed

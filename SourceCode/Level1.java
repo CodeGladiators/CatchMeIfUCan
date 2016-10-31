@@ -21,7 +21,11 @@ public class Level1 extends World
         super(1024, 768, 1); 
         // prepare level 1
         prepare();
+        
         actCounter = new Counter("Hours Left: ");
+        actCounter.setValue(3);
+        
+        
         addObject(actCounter, 900, 20);
     }
 
@@ -62,36 +66,43 @@ public class Level1 extends World
                     setX(134);
                     setY(63);
                     setMoney(1000);
+                    setHouseNumber(1);
                 }});
         houses.add(new House(){{
                     setX(357);
                     setY(63);
                     setMoney(5000);
+                    setHouseNumber(2);
                 }});
         houses.add(new House(){{
                     setX(589);
                     setY(63);
                     setMoney(10000);
+                                        setHouseNumber(3);
                 }});
         houses.add(new House(){{
                     setX(814);
                     setY(63);
                     setMoney(50000);
+                                     setHouseNumber(4);
                 }});
         houses.add(new House(){{
                     setX(953);
                     setY(261);
                     setMoney(100000);
+                                        setHouseNumber(5);
                 }});
         houses.add(new House(){{
                     setX(710);
                     setY(257);
                     setMoney(500000);
+                                        setHouseNumber(6);
                 }});
         houses.add(new House(){{
                     setX(455);
                     setY(273);
                     setMoney(1000000);
+                                        setHouseNumber(7);
                 }});
 
          // Iterate over collection of house objects and init properties
@@ -101,18 +112,22 @@ public class Level1 extends World
             //add Money Counter
             Counter houseCounter = new Counter(Float.toString(house.getMoney()));
             houseCounter.updateHouseCounter();
+            
             addObject(houseCounter, house.getX(), house.getY()-25);
 
+            
+            
+            
             if(house.getNumber()==5){
-                house.hasThief=true;
+                house.setHasThief(true);
             }else{
-                house.hasThief=false;
+                house.setHasThief(false);
             }
 
             if(house.getNumber()>5){
-                house.thiefLooted=true;
+                house.setIsLooted(true);
             }else{
-                house.thiefLooted=false;
+                house.setIsLooted(false);
             }
         }
         
@@ -124,6 +139,6 @@ public class Level1 extends World
         }
 
         Police police = new Police();
-        addObject(police,100,100);
+        addObject(police,100,145);
     }
 }
