@@ -37,6 +37,8 @@ public class Level1 extends World
     {
         List houses = new ArrayList<House>();
         List trees = new ArrayList<Tree>();
+        int[] arr = {2,3,5,7};
+        int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         trees.add(new FigTree(){{
                     setX(983);
@@ -118,13 +120,14 @@ public class Level1 extends World
             
             
             
-            if(house.getNumber()==5){
+            if(house.getNumber()==houseValue){
                 house.setHasThief(true);
+              
             }else{
                 house.setHasThief(false);
             }
 
-            if(house.getNumber()>5){
+            if(house.getNumber()>houseValue){
                 house.setIsLooted(true);
             }else{
                 house.setIsLooted(false);
