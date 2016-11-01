@@ -38,6 +38,7 @@ public class Level1 extends World
         List houses = new ArrayList<House>();
         List trees = new ArrayList<Tree>();
         int[] arr = {2,3,5,7};
+		//select houses randomly for placing the thief.
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         trees.add(new FigTree(){{
