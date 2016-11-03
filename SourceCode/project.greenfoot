@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Oct 31 23:13:02 PDT 2016
+#Wed Nov 02 20:14:29 PDT 2016
 target16.name=FigTree
 editor.swing.0.y=-8
 editor.swing.0.x=-8
@@ -288,18 +288,18 @@ dependency2.type=UsesDependency
 target4.y=130
 target4.x=200
 target20.height=50
-dependency9.type=UsesDependency
-dependency6.from=Level1
 target12.height=50
+dependency6.from=Level1
+dependency9.type=UsesDependency
 target21.typeParameters=
 world.lastInstantiated=GameWorld
 dependency14.to=Level2
 class.Hut.image=Hut.gif
-target18.typeParameters=
 class.Tree.superclass=greenfoot.Actor
+target18.typeParameters=
 target19.showInterface=false
 class.Hut.superclass=House
 target1.height=50
-mainWindow.width=1604
 target4.typeParameters=
+mainWindow.width=1604
 =\=\=\=\=\=\=
