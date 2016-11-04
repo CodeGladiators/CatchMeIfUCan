@@ -21,12 +21,16 @@ public class Level1 extends World
         super(1024, 768, 1); 
         // prepare level 1
         prepare();
-        
+
         actCounter = new Counter("Hours Left: ");
         actCounter.setValue(3);
-        
-        
+
         addObject(actCounter, 900, 20);
+    }
+
+    public void bumpCounter()
+    {
+        actCounter.change();
     }
 
     /**
@@ -38,7 +42,7 @@ public class Level1 extends World
         List houses = new ArrayList<House>();
         List trees = new ArrayList<Tree>();
         int[] arr = {2,3,5,7};
-		//select houses randomly for placing the thief.
+        //select houses randomly for placing the thief.
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         trees.add(new FigTree(){{
@@ -81,49 +85,45 @@ public class Level1 extends World
                     setX(589);
                     setY(63);
                     setMoney(10000);
-                                        setHouseNumber(3);
+                    setHouseNumber(3);
                 }});
         houses.add(new House(){{
                     setX(814);
                     setY(63);
                     setMoney(50000);
-                                     setHouseNumber(4);
+                    setHouseNumber(4);
                 }});
         houses.add(new House(){{
                     setX(953);
                     setY(261);
                     setMoney(100000);
-                                        setHouseNumber(5);
+                    setHouseNumber(5);
                 }});
         houses.add(new House(){{
                     setX(710);
                     setY(257);
                     setMoney(500000);
-                                        setHouseNumber(6);
+                    setHouseNumber(6);
                 }});
         houses.add(new House(){{
                     setX(455);
                     setY(273);
                     setMoney(1000000);
-                                        setHouseNumber(7);
+                    setHouseNumber(7);
                 }});
 
-         // Iterate over collection of house objects and init properties
+        // Iterate over collection of house objects and init properties
         for(Iterator<House> i = houses.iterator(); i.hasNext(); ) {
             House house = i.next();
             addObject(house,house.getXCoordinate() ,house.getYCoordinate());
             //add Money Counter
             Counter houseCounter = new Counter(Float.toString(house.getMoney()));
             houseCounter.updateHouseCounter();
-            
             addObject(houseCounter, house.getX(), house.getY()-25);
 
-            
-            
-            
             if(house.getNumber()==houseValue){
                 house.setHasThief(true);
-              
+
             }else{
                 house.setHasThief(false);
             }
@@ -134,8 +134,7 @@ public class Level1 extends World
                 house.setIsLooted(false);
             }
         }
-        
-        
+
         // add Trees
         for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
             Tree tree = i.next();

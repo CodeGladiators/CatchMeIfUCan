@@ -8,6 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class WoodenHut extends House
 {
+    
+    // private Counter actCounter;
+    // public WoodenHut(Counter counter){
+        // super(counter);
+    // }
+    
     /**
      * Act - do whatever the WoodenHut wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

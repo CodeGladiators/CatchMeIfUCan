@@ -20,6 +20,7 @@ public class Level2 extends World
         prepare();
         actCounter = new Counter("Hours Left: ");
         addObject(actCounter, 900, 20); 
+       
     }
 
     public void prepare(){

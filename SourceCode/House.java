@@ -16,9 +16,11 @@ public class House extends Actor
     private int y;
     private int count=0;
     private Actor policeRemoved=null;
+    //private Counter actCounter;
     //yet to add house properties has thief
-    public House(){
-    }
+    //public House(Counter counter){
+    //  actCounter=counter;
+    //}
 
     public void setIsLooted(boolean isLooted){
         this.isLooted = isLooted;
@@ -67,14 +69,25 @@ public class House extends Actor
 
         }
     }    
+
     public void checkThief(){
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
+
+            bumpCounter();
         }else if (!isLooted && hasThief){
             System.out.println("You Win");
+            Greenfoot.setWorld(new Level2());
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
+            bumpCounter();
         }    
+    }
+
+    private void bumpCounter()
+    {
+        Level1 world= (Level1) getWorld();
+        world.bumpCounter();
     }
 
     public void AddCar(){

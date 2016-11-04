@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level3 extends World
 {
-
+    private Counter actCounter;
     /**
      * Constructor for objects of class Level3.
      * 
@@ -18,9 +18,12 @@ public class Level3 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 600, 1); 
          prepare();
+         actCounter = new Counter("Hours Left: ");
+        addObject(actCounter, 900, 20); 
     }
     public void prepare()
     {
+        
         House[] houses = new House[20];
         houses[0]= new House();
         houses[1]= new House();
