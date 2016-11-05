@@ -20,6 +20,8 @@ public class Level2 extends World
         prepare();
         actCounter = new Counter("Hours Left: ");
         addObject(actCounter, 900, 20); 
+        int[] arr = {1,2,3,5,7,9,11,13};
+        int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
        
     }
 
