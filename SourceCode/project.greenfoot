@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Nov 06 07:22:21 PST 2016
+#Sun Nov 06 08:00:55 PST 2016
 target16.name=House
 editor.swing.0.y=-11
 editor.swing.0.x=-11
@@ -65,6 +65,7 @@ dependency17.type=UsesDependency
 dependency14.from=GameWorld
 class.Level2.image=level2.png
 package.numTargets=24
+class.Level5.superclass=greenfoot.World
 class.Player.superclass=greenfoot.Actor
 target13.type=ClassTarget
 dependency24.type=UsesDependency
