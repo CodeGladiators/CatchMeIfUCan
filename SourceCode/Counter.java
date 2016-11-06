@@ -96,6 +96,7 @@ public class Counter extends Actor
         target -= score;
         if(target<=0){
             getWorld().addObject(new GameOver(), getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();
         }
     }
 
