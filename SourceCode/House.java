@@ -14,6 +14,7 @@ public class House extends Actor
     private boolean hasThief;
     private int x;
     private int y;
+    private boolean isVisited;
     private int count=0;
     private Actor policeRemoved=null;
     //private Counter actCounter;
@@ -21,6 +22,10 @@ public class House extends Actor
     //public House(Counter counter){
     //  actCounter=counter;
     //}
+
+    public House(){
+        isVisited=false;
+    }
 
     public void setIsLooted(boolean isLooted){
         this.isLooted = isLooted;
@@ -61,7 +66,8 @@ public class House extends Actor
         Actor car;
         car=getOneObjectAtOffset(0,0,Police.class);
 
-        if(car!=null && policeRemoved==null){
+        if(car!=null && policeRemoved==null && !isVisited){
+            isVisited=true;
             World world=getWorld();
             policeRemoved=car;
             world.removeObject(car);

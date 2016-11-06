@@ -75,7 +75,7 @@ public class Counter extends Actor
     public void change()
     {
         System.out.println("Updating values");
-        
+
         if (value > 0) {
             value--;
             updateImage();
@@ -90,9 +90,13 @@ public class Counter extends Actor
     {
         target += score;
     }
+
     public void sub(int score)
     {
         target -= score;
+        if(target<=0){
+            getWorld().addObject(new GameOver(), getWorld().getWidth()/2, getWorld().getHeight()/2);
+        }
     }
 
     /**
