@@ -90,6 +90,10 @@ public class Counter extends Actor
     {
         target += score;
     }
+    public void sub(int score)
+    {
+        target -= score;
+    }
 
     /**
      * Return the current counter value.

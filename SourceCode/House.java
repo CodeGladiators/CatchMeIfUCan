@@ -87,6 +87,7 @@ public class House extends Actor
     private void bumpCounter()
     {
         Level1 world= (Level1) getWorld();
+        world.actCounter.sub(1);
         world.bumpCounter();
     }
 
