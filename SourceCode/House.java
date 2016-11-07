@@ -79,13 +79,14 @@ public class House extends Actor
     public void checkThief(){
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
-
+            this.setImage("houseVisited.png");
             bumpCounter();
         }else if (!isLooted && hasThief){
             System.out.println("You Win");
             Greenfoot.setWorld(new Level2());
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
+            this.setImage("houseVisited.png");
             bumpCounter();
         }    
     }
