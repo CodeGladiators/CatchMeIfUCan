@@ -35,5 +35,4 @@ public class GameMenu extends World
         addObject(helpButton,720 ,300);
 
     }
-
 }

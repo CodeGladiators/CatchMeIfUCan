@@ -65,4 +65,5 @@ public class Level2 extends World
         Police police = new Police();
         addObject(police,150,150);
     }
+    
 }

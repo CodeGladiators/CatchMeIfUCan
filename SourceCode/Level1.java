@@ -33,6 +33,19 @@ public class Level1 extends World
         actCounter.change();
     }
 
+    private int timer = 3600;
+        public void act(){
+        if(timer > 0){
+            timer--;
+        }
+        else{
+            Greenfoot.stop();
+        }
+        System.out.println("Your Score:" + timer);
+    }
+    
+    
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
