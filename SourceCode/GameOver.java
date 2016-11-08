@@ -36,5 +36,4 @@ public class GameOver extends Actor
             getWorld().removeObject(this);
         }
     }
-
 }

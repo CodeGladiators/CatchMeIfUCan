@@ -9,10 +9,9 @@ import java.awt.*;
  */
 public class Instructions extends Actor
 {
-    private int score;
 
-    public Instructions(){
-        setImage(new GreenfootImage("SOME TEXT",28,Color.BLACK,Color.WHITE));
+    public Instructions(String str){
+        setImage(new GreenfootImage(str,28,Color.BLACK,Color.WHITE));
     }
 
     /**
@@ -25,5 +24,13 @@ public class Instructions extends Actor
         img.setColor(Color.BLACK);
         img.setFont(new java.awt.Font("Arial", Font.PLAIN, 24));
         img.drawString(text,10,18);
+        
+    }
+    
+    
+    public void act(){
+        if(Greenfoot.isKeyDown("down")){
+            getWorld().removeObject(this);
+        }
     }
 }

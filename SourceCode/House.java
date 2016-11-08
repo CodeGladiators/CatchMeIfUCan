@@ -17,6 +17,10 @@ public class House extends Actor
     private boolean isVisited;
     private int count=0;
     private Actor policeRemoved=null;
+    String Looted = " This house has already been looted !! You lost 1 hour! ";
+    String notLooted = " This house is safe!! ";
+    String foundThief = " Thief's here ! You won! ";
+
     //private Counter actCounter;
     //yet to add house properties has thief
     //public House(Counter counter){
@@ -80,12 +84,14 @@ public class House extends Actor
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
             this.setImage("houseVisited.png");
-            bumpCounter();
+            getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 300);
+            bumpCounter();            
         }else if (!isLooted && hasThief){
-            System.out.println("You Win");
+            System.out.println("You Win");            
             Greenfoot.setWorld(new Level2());
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
+            getWorld().addObject(new Instructions(notLooted), getWorld().getWidth()/3, getWorld().getHeight()/2 + 300);
             this.setImage("houseVisited.png");
             bumpCounter();
         }    
