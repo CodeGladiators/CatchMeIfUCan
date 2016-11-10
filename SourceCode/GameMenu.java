@@ -23,16 +23,19 @@ public class GameMenu extends World
     private void prepare(){
 
         ThiefIcon thiefIcon = new ThiefIcon();
-        addObject(thiefIcon,280 ,300);
+        addObject(thiefIcon,280 ,320);
+        
+        DetectiveIcon detectiveIcon = new DetectiveIcon();
+        addObject(detectiveIcon,-200 ,340);
 
         SinglePlayerButton singlePlayerButton = new SinglePlayerButton();
-        addObject(singlePlayerButton,600 ,200);
+        addObject(singlePlayerButton,0 ,200);
 
         MultiPlayerButton multiPlayerButton = new MultiPlayerButton();
-        addObject(multiPlayerButton,850 ,200);
+        addObject(multiPlayerButton,getWidth(), 200);
 
         HelpButton helpButton = new HelpButton();
-        addObject(helpButton,720 ,300);
+        addObject(helpButton,720 , getHeight());
 
     }
 }

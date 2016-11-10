@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class SinglePlayerButton extends GameMenuComponents
-{
+{   
     /**
      * Act - do whatever the SinglePlayerButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,5 +20,13 @@ public class SinglePlayerButton extends GameMenuComponents
         {
             Greenfoot.setWorld(new Level1());
         }
-    }    
+        
+        moveInAnimation();
+    }
+
+    public void moveInAnimation(){
+        if(getX() < 600){
+            move(20);
+        }
+    }
 }

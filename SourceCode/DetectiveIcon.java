@@ -1,24 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TheifIcon here.
+ * Write a description of class DetectiveIcon here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ThiefIcon extends GameMenuComponents
+public class DetectiveIcon extends GameMenuComponents
 {
     /**
-     * Act - do whatever the TheifIcon wants to do. This method is called whenever
+     * Act - do whatever the DetectiveIcon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
-        run();
+        chase();
     }    
 
-    public void run(){
+    public void chase(){
         // move two places along horizontal direction
         move(2);
         // if moves out of screen, start from the left edge again
@@ -26,5 +26,4 @@ public class ThiefIcon extends GameMenuComponents
             setLocation(0, getY());
         }
     }
-    
 }
