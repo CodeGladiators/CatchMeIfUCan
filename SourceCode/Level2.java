@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.*;
 /**
  * Write a description of class Level2 here.
  * 
@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level2 extends World
 {
-    private Counter actCounter;
+    public Counter actCounter;
+    private int timer = 3600;
+
     /**
      * Constructor for objects of class Level2.
      * 
@@ -19,14 +21,29 @@ public class Level2 extends World
         // prepare level 1
         prepare();
         actCounter = new Counter("Hours Left: ");
+        actCounter.setValue(5);
         addObject(actCounter, 900, 20); 
         int[] arr = {1,2,3,5,7,9,11,13};
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
-       
+
+    }
+
+    public void act(){
+        if(timer > 0){
+            timer--;
+        }
+        else{
+            Greenfoot.stop();
+        }
+        System.out.println("Your Score:" + timer);
+    }
+
+    public void bumpCounter()
+    {
+        actCounter.change();
     }
 
     public void prepare(){
-
         House[] houses = new House[20];
         houses[0]= new House();
         houses[1]= new House();
@@ -64,6 +81,43 @@ public class Level2 extends World
 
         Police police = new Police();
         addObject(police,150,150);
+
+        //add Trees
+        List trees = new ArrayList<Tree>();
+        trees.add(new FigTree(){{
+                    setX(61);
+                    setY(259);
+                }});
+        trees.add(new PineTree(){{
+                    setX(105);
+                    setY(724);
+                }});
+        trees.add(new PineTree(){{
+                    setX(200);
+                    setY(724);
+                }});
+        trees.add(new PineTree(){{
+                    setX(230);
+                    setY(724);
+                }});
+        trees.add(new PineTree(){{
+                    setX(888);
+                    setY(724);
+                }});
+        trees.add(new PineTree(){{
+                    setX(73);
+                    setY(468);
+                }});
+        trees.add(new RimuTree(){{
+                    setX(73);
+                    setY(383);
+                }});
+
+        // add Trees
+        for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
+            Tree tree = i.next();
+            addObject(tree,tree.getXCoordinate() ,tree.getYCoordinate());
+        }
     }
-    
+
 }

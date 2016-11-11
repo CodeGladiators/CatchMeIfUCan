@@ -10,7 +10,7 @@ import java.util.*;
 public class Level1 extends World
 {
     public Counter actCounter;
-
+    private int timer = 3600;
     /**
      * Constructor for objects of class Level1.
      * 
@@ -33,8 +33,7 @@ public class Level1 extends World
         actCounter.change();
     }
 
-    private int timer = 3600;
-        public void act(){
+    public void act(){
         if(timer > 0){
             timer--;
         }
@@ -43,8 +42,7 @@ public class Level1 extends World
         }
         System.out.println("Your Score:" + timer);
     }
-    
-    
+
     
     /**
      * Prepare the world for the start of the program.

@@ -96,19 +96,21 @@ public class House extends Actor
             bumpCounter();
         }    
     }
+
     private void bumpCounter()
     {
-       if(this.getWorld().getClass().getName()== "Level1"){
+        if(this.getWorld().getClass().getName()== "Level1"){
             Level1 world = (Level1) getWorld();
             world.actCounter.sub(1);
             world.bumpCounter();
-       }
-       if(this.getWorld().getClass().getName()== "Level2"){
-           Level2 world = (Level2) getWorld();
-           // world.actCounter.sub(1);
-           // world.bumpCounter();}
+        }
+        if(this.getWorld().getClass().getName()== "Level2"){
+            Level2 world = (Level2) getWorld();
+            world.actCounter.sub(1);
+            world.bumpCounter();
         }
     }
+
     public void AddCar(){
         //Add car outside the house once arrow key is pressed
         if(policeRemoved!=null && count>50){
