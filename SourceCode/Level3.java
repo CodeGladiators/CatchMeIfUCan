@@ -55,7 +55,7 @@ public class Level3 extends World
         houses[12]= new House();
         
         // theif placement
-        int[] arr = {1,2,3,5,7,9,11,13};
+        int[] arr = {1,3,11,13};
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         // Iterate over house objects and init properties

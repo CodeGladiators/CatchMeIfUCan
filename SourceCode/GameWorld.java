@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameWorld extends World
 {
     private int timer = 3600;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -18,6 +19,7 @@ public class GameWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 768, 1); 
         //prepare();
+        
         Greenfoot.setWorld(new GameMenu());
         // Use for testing purpose
         //Greenfoot.setWorld(new Level3());

@@ -76,7 +76,7 @@ public class Level2 extends World
         addObject(houses[12],houses[2].getX()-30,houses[8].getY()+y-10);
 
         // theif placement
-        int[] arr = {1,2,3,5,7,9,11,13};
+        int[] arr = {1,3,11,13};
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         // Iterate over house objects and init properties

@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameMenu extends World
 {
 
+
+
     /**
      * Constructor for objects of class GameMenu.
      * 
@@ -23,6 +25,7 @@ public class GameMenu extends World
 
     private void prepare(){
 
+     
         ThiefIcon thiefIcon = new ThiefIcon();
         addObject(thiefIcon,280 ,320);
         
@@ -37,6 +40,7 @@ public class GameMenu extends World
 
         HelpButton helpButton = new HelpButton();
         addObject(helpButton,720 , getHeight());
-
+        
+        
     }
 }
