@@ -36,7 +36,6 @@ public class House extends Actor
     }
 
     public boolean isLooted(){
-
         return isLooted;
     }
 
