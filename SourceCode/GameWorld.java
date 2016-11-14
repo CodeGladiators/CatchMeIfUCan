@@ -37,21 +37,5 @@ public class GameWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    // private void prepare()
-    // {
-    // House[] houses = new House[7];
-    // House sampleHouse = new House();
-    // int x = sampleHouse.getImage().getWidth()/2;
-    // int y = sampleHouse.getImage().getHeight()/2;
-
-    // for (int i=0;i<houses.length;i++){
-    // houses[i] = new House();
-    // addObject(houses[i],x ,y);
-    // x += sampleHouse.getImage().getWidth() + 10;
-    // if(x > getWidth()-sampleHouse.getImage().getWidth()){
-    // y += sampleHouse.getImage().getHeight() + 10;
-    // x -= sampleHouse.getImage().getWidth() + 10;
-    // }         
-    // }
-    // }
+   
 }
