@@ -25,7 +25,6 @@ public class ThiefIcon extends GameMenuComponents
             move(2);
 
         }else{
-
             move(3);
         }
 

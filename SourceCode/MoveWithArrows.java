@@ -8,15 +8,12 @@ import greenfoot.*;
  */
 public class MoveWithArrows  
 {
-    // instance variables - replace the example below with your own
     private int x;
-    Actor officer=null;
-    /**
-     * Constructor for objects of class MoveWithArrows
-     */
-    public MoveWithArrows(Actor a)
+    private Actor officer = null;
+  
+    public MoveWithArrows(Actor actor)
     {
-        officer=a;
+        officer = actor;
     }
 
     public void Move(int speed)
@@ -24,17 +21,13 @@ public class MoveWithArrows
         if(Greenfoot.isKeyDown("right")){
             officer.setRotation(0);
             officer.move(speed);
-        }
-
-        if(Greenfoot.isKeyDown("down")){
+        } else if(Greenfoot.isKeyDown("down")){
             officer.setRotation(90);
             officer.move(speed);
-        }
-        if(Greenfoot.isKeyDown("up")){
+        } else if(Greenfoot.isKeyDown("up")){
             officer.setRotation(270);
             officer.move(speed);
-        }
-        if(Greenfoot.isKeyDown("left")){
+        } else if(Greenfoot.isKeyDown("left")){
             officer.setRotation(-180);
             officer.move(speed);
         }

@@ -19,15 +19,14 @@ public class Instructions extends Actor
      */
     public void Update(String text){
 
-        GreenfootImage img=getImage();
+        GreenfootImage img = getImage();
         img.clear();
         img.setColor(Color.BLACK);
         img.setFont(new java.awt.Font("Arial", Font.PLAIN, 24));
         img.drawString(text,10,18);
-        
+
     }
-    
-    
+
     public void act(){
         if(Greenfoot.isKeyDown("down")){
             getWorld().removeObject(this);

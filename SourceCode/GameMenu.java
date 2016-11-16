@@ -1,34 +1,22 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
 /**
- * Write a description of class GameMenu here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Game Menu for CatchMeIfUCan
  */
 public class GameMenu extends World
 {
 
-
-
-    /**
-     * Constructor for objects of class GameMenu.
-     * 
-     * 
-     */
     public GameMenu()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    {   
         super(1024, 600, 1);
         prepare();
     }
 
     private void prepare(){
 
-     
         ThiefIcon thiefIcon = new ThiefIcon();
         addObject(thiefIcon,280 ,320);
-        
+
         DetectiveIcon detectiveIcon = new DetectiveIcon();
         addObject(detectiveIcon,-200 ,340);
 
@@ -39,8 +27,6 @@ public class GameMenu extends World
         addObject(multiPlayerButton,getWidth(), 200);
 
         HelpButton helpButton = new HelpButton();
-        addObject(helpButton,720 , getHeight());
-        
-        
+        addObject(helpButton,720 , getHeight());        
     }
 }

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class SinglePlayerButton extends GameMenuComponents
 {   
-        String username = "";
+    String username = "";
     String text = "Enter username";
 
     public void act() 
@@ -18,27 +18,25 @@ public class SinglePlayerButton extends GameMenuComponents
 
         if (Greenfoot.mouseClicked(this))
         {
-               if(username.equals("")){
-            username = JOptionPane.showInputDialog(text);
-  
-            if(!username.equals("")){
-                 JOptionPane.showMessageDialog(null, "Hello "+username);
-                   Greenfoot.setWorld(new Level1());
-  
+            if(username.equals("")){
+                username = JOptionPane.showInputDialog(text);
+
+                if(!username.equals("")){
+                    JOptionPane.showMessageDialog(null, "Hello "+username);
+                    Greenfoot.setWorld(new Level1());
+
                 }
             }
         }
-        
+
         moveInAnimation();
     }
 
-    
     public void moveInAnimation(){
         if(getX() < 600){
             move(20);
         }
     }
-    
-    
+
     
 }

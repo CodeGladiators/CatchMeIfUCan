@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level3 here.
+ * Write a description of class Level4 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -11,17 +11,18 @@ public class Level3 extends World
     private Counter actCounter;
     private int timer = 3600;
     /**
-     * Constructor for objects of class Level3.
+     * Constructor for objects of class Level4.
      * 
      */
     public Level3()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 600, 1); 
-         prepare();
-         actCounter = new Counter("Hours Left: ");
+        prepare();
+        actCounter = new Counter("Hours Left: ");
         addObject(actCounter, 900, 20); 
     }
+
     public void act(){
         if(timer > 0){
             timer--;
@@ -31,6 +32,7 @@ public class Level3 extends World
         }
         System.out.println("Your Score:" + timer);
     }
+
     public void bumpCounter()
     {
         actCounter.change();
@@ -38,36 +40,50 @@ public class Level3 extends World
 
     public void prepare()
     {
-        
-        House[] houses = new House[20];
-        houses[0]= new House();
-        houses[1]= new House();
-        houses[2]= new House();
-        houses[3]= new House();
-        houses[4]= new House();
-        houses[5]= new House();
-        houses[6]= new House();
-        houses[7]= new House();
-        houses[8]= new House();
-        houses[9]= new House();
-        houses[10]= new House();
-        houses[11]= new House();
-        houses[12]= new House();
-        
-        // theif placement
+        // init house objects-15 houses- which is as per 2^n-1 
+        House[] houses = new House[15];
+        for(int i=0; i<houses.length ; i++){
+            houses[i]= new WoodenHut();
+        }
+
+        int x = houses[0].getImage().getWidth()/2;
+        int y = houses[0].getImage().getHeight()/2;
+
+        // first row of houses
+        addObject(houses[0],2*x ,2*y);
+        addObject(houses[1],houses[0].getX()+ 2*x ,2*y);
+        addObject(houses[2],houses[1].getX()+ 2*x, 2*y);
+        // vertical row
+        addObject(houses[3],houses[2].getX()+ 3*y ,houses[2].getY()+2*y-10);
+        addObject(houses[4],houses[3].getX(), houses[3].getY()+2*y-10);
+        addObject(houses[5],houses[3].getX() ,houses[4].getY()+2*y-10);
+        addObject(houses[6],houses[3].getX() ,houses[5].getY()+2*y-10);
+        // botom horizontal row
+        addObject(houses[7],houses[6].getX()+ 4*x, houses[6].getY()+2*y-10);
+        addObject(houses[8],houses[7].getX()+2*x ,houses[7].getY());
+        addObject(houses[9],houses[8].getX()+2*x, houses[7].getY());
+        addObject(houses[10],houses[9].getX()+2*x ,houses[7].getY());
+        addObject(houses[11],houses[10].getX()+2*x ,houses[7].getY());
+
+        addObject(houses[12],houses[11].getX(), houses[5].getY());
+        addObject(houses[13],houses[11].getX(), houses[4].getY());
+        addObject(houses[14],houses[11].getX(), houses[3].getY());
+
+        // TODO-theif placement- not proper
         int[] arr = {1,3,11,13};
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         // Iterate over house objects and init properties
-        for(int i=0; i<13; i++) {
+        for(int i=0; i<houses.length; i++) {
             House house = houses[i];
-            house.setMoney((i+1)*1000);
+            house.setMoney((i+1)*10);
             house.setHouseNumber(i+1);
-
+            
             //add Money Counter
+            // TODO-seems too big
             Counter houseCounter = new Counter(Float.toString(house.getMoney()));
             houseCounter.updateHouseCounter();
-            //addObject(houseCounter, house.getX(), house.getY()-25);
+            addObject(houseCounter, house.getX(), house.getY()-25);
 
             if(house.getNumber()==houseValue){
                 house.setHasThief(true);
@@ -81,21 +97,36 @@ public class Level3 extends World
                 house.setIsLooted(false);
             }
         }
-        
-        Tree[] trees = new Tree[10];
+        // init tree objects
+        Tree[] pineTrees = new Tree[31];
 
-        trees[0]= new PineTree();
-        trees[1]= new PineTree();
-        trees[2]= new RimuTree();
-        trees[3]= new PineTree();
-        trees[4]= new PineTree();
-        trees[5]= new PineTree();
-        trees[6]= new PineTree();
-        trees[7]= new FigTree();
-        trees[8]= new FigTree();
-        trees[9]= new FigTree();
-    
-    
+        for(int i=0;i<pineTrees.length;i++)
+        {
+            pineTrees[i]= new PineTree();   
+        }
+
+        x = pineTrees[0].getImage().getWidth()/2;
+        y = pineTrees[0].getImage().getHeight()/4;
+        //adding Trees
+        // bottom left row
+        addObject(pineTrees[0], x, getHeight()-y);
+        addObject(pineTrees[1],pineTrees[0].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[2],pineTrees[1].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[3],pineTrees[2].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[4],pineTrees[3].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[5],pineTrees[4].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[6],pineTrees[5].getX()+ x , pineTrees[0].getY());
+        // bottom right row
+        addObject(pineTrees[7], houses[10].getX(), pineTrees[0].getY());
+        addObject(pineTrees[8],pineTrees[7].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[9],pineTrees[8].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[10],pineTrees[9].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[11],pineTrees[10].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[12],pineTrees[11].getX()+ x ,pineTrees[0].getY());
+        addObject(pineTrees[13],pineTrees[12].getX()+ x , pineTrees[0].getY());
+        // rimu trees near the house
+        addObject(new RimuTree(),houses[7].getX()-2*x ,houses[7].getY());
+        addObject(new RimuTree(),houses[7].getX()-3*x , houses[7].getY());      
+
     }
-    
 }

@@ -15,11 +15,11 @@ public class House extends Actor
     private int x;
     private int y;
     private boolean isVisited;
-    private int count=0;
-    private Actor policeRemoved=null;
-    String Looted = " This house has already been looted !! You lost 1 hour! ";
-    String notLooted = " This house is safe!! ";
-    String foundThief = " Thief's here ! You won! ";
+    private int count = 0;
+    private Actor policeRemoved = null;
+    private String Looted = " This house has already been looted !! You lost 1 hour! ";
+    private String notLooted = " This house is safe!! ";
+    private String foundThief = " Thief's here ! You won! ";
 
     //private Counter actCounter;
     //yet to add house properties has thief
@@ -113,7 +113,6 @@ public class House extends Actor
     public void AddCar(){
         //Add car outside the house once arrow key is pressed
         if(policeRemoved!=null && count>50){
-            //System.out.println("Car appears");
             getWorld().addObject(policeRemoved,getX(),getY()+50);
             policeRemoved=null;
             count=0;
