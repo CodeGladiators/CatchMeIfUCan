@@ -15,7 +15,7 @@ public class GameWorld extends World
     {   
         super(1024, 768, 1); 
         Greenfoot.setWorld(new GameMenu());
-        // Use for testing purpose
+        // Use for testing purpose  
         // Greenfoot.setWorld(new Level3());
     }
 

@@ -35,13 +35,16 @@ public class Police extends Actor
         {
             move(4);
             playSiren();
-        }else if(Greenfoot.isKeyDown("right"))
+        }
+        if(Greenfoot.isKeyDown("right"))
         {
             turn(2);
-        }else if(Greenfoot.isKeyDown("left"))
+        }
+        if(Greenfoot.isKeyDown("left"))
         {
             turn(-2);
-        }else if(Greenfoot.isKeyDown("down"))
+        }
+        if(Greenfoot.isKeyDown("down"))
         {
             move(-2);
         }

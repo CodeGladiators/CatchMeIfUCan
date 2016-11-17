@@ -21,13 +21,16 @@ public class MoveWithArrows
         if(Greenfoot.isKeyDown("right")){
             officer.setRotation(0);
             officer.move(speed);
-        } else if(Greenfoot.isKeyDown("down")){
+        } 
+        if(Greenfoot.isKeyDown("down")){
             officer.setRotation(90);
             officer.move(speed);
-        } else if(Greenfoot.isKeyDown("up")){
+        } 
+        if(Greenfoot.isKeyDown("up")){
             officer.setRotation(270);
             officer.move(speed);
-        } else if(Greenfoot.isKeyDown("left")){
+        } 
+        if(Greenfoot.isKeyDown("left")){
             officer.setRotation(-180);
             officer.move(speed);
         }
