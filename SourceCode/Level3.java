@@ -20,6 +20,7 @@ public class Level3 extends World
         super(1024, 600, 1); 
         prepare();
         actCounter = new Counter("Hours Left: ");
+        actCounter.setValue(5);
         addObject(actCounter, 900, 20); 
     }
 
