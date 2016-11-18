@@ -8,18 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class House extends Actor
 {
-    private int houseNumber;
+    protected int houseNumber;
     private float moneyStored;
-    private boolean isLooted;
-    private boolean hasThief;
+    protected boolean isLooted;
+    protected boolean hasThief;
     private int x;
     private int y;
-    private boolean isVisited;
-    private int count = 0;
-    private Actor policeRemoved = null;
-    private String Looted = " This house has already been looted !! You lost 1 hour! ";
-    private String notLooted = " This house is safe!! ";
-    private String foundThief = " Thief's here ! You won! ";
+    protected boolean isVisited;
+    protected int count = 0;
+    protected Actor policeRemoved = null;
+    protected String Looted = " This house has already been looted !! You lost 1 hour! ";
+    protected String notLooted = " This house is safe!! ";
+    protected String foundThief = " Thief's here ! You won! ";
 
     //private Counter actCounter;
     //yet to add house properties has thief
@@ -79,24 +79,24 @@ public class House extends Actor
         }
     }    
 
-    public void checkThief(){
+    protected void checkThief(){
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
             this.setImage("houseVisited.png");
-            getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 300);
+            getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
             bumpCounter();            
         }else if (!isLooted && hasThief){
             System.out.println("You Win");            
             Greenfoot.setWorld(new Level2());
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
-            getWorld().addObject(new Instructions(notLooted), getWorld().getWidth()/3, getWorld().getHeight()/2 + 300);
+            getWorld().addObject(new Instructions(notLooted), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
             this.setImage("houseVisited.png");
             bumpCounter();
         }    
     }
 
-    private void bumpCounter()
+    protected void bumpCounter()
     {
         if(this.getWorld().getClass().getName()== "Level1"){
             Level1 world = (Level1) getWorld();
