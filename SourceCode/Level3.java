@@ -37,6 +37,7 @@ public class Level3 extends World
     {
         actCounter.change();
     }
+    
 
     public void prepare()
     {
@@ -97,6 +98,14 @@ public class Level3 extends World
                 house.setIsLooted(false);
             }
         }
+        
+        // adding police car to game level
+        Police police = new Police();
+        addObject(police,houses[14].getX()+40+2*x,houses[1].getY()-y+50);
+        police.setRotation(90);
+
+
+        
         // init tree objects
         Tree[] pineTrees = new Tree[31];
 
