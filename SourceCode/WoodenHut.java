@@ -43,7 +43,8 @@ public class WoodenHut extends House
             this.setImage("WoodenHutVisited.png");
             getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
             bumpCounter();            
-        }else if (!isLooted && hasThief){
+        }
+        else if (!isLooted && hasThief){
             System.out.println("You Win");           
             Greenfoot.setWorld(new Level2());
         } else{
