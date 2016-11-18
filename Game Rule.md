@@ -1,12 +1,8 @@
 *Game Rules:*
 
 * There will a gameboard which looks like a city with houses and streets.
-* The number of houses will be more than 44 for binary search to be an efficient solution than others. 
-* The first player selects a house in which he thinks the thief exists.
-* If thief is found the first player wins.
-* If thief is not found, the second player gets a turn.
-* If second player on selecting a house finds the thief he wins. 
-* Otherwise the first player gets the turn and so on until someone catches the thief.
-* Now if a player randomly searches for houses on the street and comparing it with someone who applies logic 
-  and uses an algorithm like binary search to search through the sorted houses by wealth list to search for the thief,
-  the second person will win.      
+* There will be multiple levels over which a player will accumulate points. 
+* Both player will try to find the house which the thief is currently looting.
+* If thief is found the level ends and the player has to wait for other players.
+* At the end of all levels, the player with the highest point wins.
+* The player with knowledge of binary search has the better chance of winning.   
