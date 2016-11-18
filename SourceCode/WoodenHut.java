@@ -40,7 +40,7 @@ public class WoodenHut extends House
     public void checkThief(){
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
-            this.setImage("houseVisited.png");
+            this.setImage("WoodenHutVisited.png");
             getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
             bumpCounter();            
         }else if (!isLooted && hasThief){
@@ -49,7 +49,7 @@ public class WoodenHut extends House
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
             getWorld().addObject(new Instructions(notLooted), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
-            this.setImage("houseVisited.png");
+            this.setImage("WoodenHutVisited.png");
             bumpCounter();
         }    
     }
