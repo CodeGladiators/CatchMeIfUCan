@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level3 extends World
 {
-    private Counter actCounter;
+    public Counter actCounter;
     private int timer = 3600;
     /**
      * Constructor for objects of class Level4.
@@ -20,7 +20,7 @@ public class Level3 extends World
         super(1024, 600, 1); 
         prepare();
         actCounter = new Counter("Hours Left: ");
-        actCounter.setValue(5);
+        actCounter.setValue(4);
         addObject(actCounter, 900, 20); 
     }
 
@@ -31,7 +31,7 @@ public class Level3 extends World
         else{
             Greenfoot.stop();
         }
-        System.out.println("Your Score:" + timer);
+        //System.out.println("Your Score:" + timer);
     }
 
     public void bumpCounter()

@@ -84,10 +84,27 @@ public class House extends Actor
             System.out.println("You lost 1 hour!!This house has been loooted!!");
             this.setImage("houseVisited.png");
             getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
-            bumpCounter();            
+            bumpCounter();  
+            System.out.println(this.getWorld().getClass().getName());
+
         }else if (!isLooted && hasThief){
             System.out.println("You Win");            
-            Greenfoot.setWorld(new Level2());
+            if(this.getWorld().getClass().getName()== "Level1"){
+                Greenfoot.setWorld(new Level2());
+            }
+            
+            if(this.getWorld().getClass().getName()== "Level2"){
+                Greenfoot.setWorld(new Level3());
+            }
+            
+            if(this.getWorld().getClass().getName()== "Level3"){
+                Greenfoot.setWorld(new Level4());
+            }
+            
+            if(this.getWorld().getClass().getName()== "Level4"){
+                Greenfoot.setWorld(new GameMenu());
+            }
+            
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
             getWorld().addObject(new Instructions(notLooted), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
@@ -105,6 +122,16 @@ public class House extends Actor
         }
         if(this.getWorld().getClass().getName()== "Level2"){
             Level2 world = (Level2) getWorld();
+            world.actCounter.sub(1);
+            world.bumpCounter();
+        }
+        if(this.getWorld().getClass().getName()== "Level3"){
+            Level3 world = (Level3) getWorld();
+            world.actCounter.sub(1);
+            world.bumpCounter();
+        }
+        if(this.getWorld().getClass().getName()== "Level4"){
+            Level4 world = (Level4) getWorld();
             world.actCounter.sub(1);
             world.bumpCounter();
         }

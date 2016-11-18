@@ -29,7 +29,7 @@ public class Level2 extends World
         else{
             Greenfoot.stop();
         }
-        System.out.println("Your Score:" + timer);
+       // System.out.println("Your Score:" + timer);
     }
 
     public void bumpCounter()
@@ -109,7 +109,7 @@ public class Level2 extends World
 
         // adding hours left
         actCounter = new Counter("Hours Left: ");
-        actCounter.setValue(5);
+        actCounter.setValue(4);
         addObject(actCounter, 900, 20); 
 
         // init tree objects

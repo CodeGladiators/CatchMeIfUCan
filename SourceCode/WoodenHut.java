@@ -37,20 +37,29 @@ public class WoodenHut extends House
         }
     } 
     
-    public void checkThief(){
+    protected void checkThief(){
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
-            this.setImage("WoodenHutVisited.png");
+            this.setImage("house2visited.png");
             getWorld().addObject(new Instructions(Looted), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
-            bumpCounter();            
-        }
-        else if (!isLooted && hasThief){
-            System.out.println("You Win");           
-            Greenfoot.setWorld(new Level2());
+            bumpCounter();  
+            System.out.println(this.getWorld().getClass().getName());
+
+        }else if (!isLooted && hasThief){
+            System.out.println("You Win");            
+
+            if(this.getWorld().getClass().getName()== "Level3"){
+                Greenfoot.setWorld(new Level4());
+            }
+            
+            if(this.getWorld().getClass().getName()== "Level4"){
+                Greenfoot.setWorld(new GameMenu());
+            }
+            
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
             getWorld().addObject(new Instructions(notLooted), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
-            this.setImage("WoodenHutVisited.png");
+            this.setImage("house2visited.png");
             bumpCounter();
         }    
     }

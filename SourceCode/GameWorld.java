@@ -26,6 +26,6 @@ public class GameWorld extends World
         }else{
             Greenfoot.stop();
         }
-        System.out.println("Your Score:" + timer);
+        //System.out.println("Your Score:" + timer);
     }
 }

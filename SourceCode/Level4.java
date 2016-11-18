@@ -21,7 +21,7 @@ public class Level4 extends World
         } else{
             Greenfoot.stop();
         }
-        System.out.println("Your Score:" + timer);
+       // System.out.println("Your Score:" + timer);
     }
 
     public void bumpCounter()
@@ -79,7 +79,7 @@ public class Level4 extends World
         addObject(houses[30],houses[29].getX()+2*x ,houses[26].getY());
 
         // TODO-theif placement- not proper
-        int[] arr = {1,3,11,13};
+        int[] arr = {1,3,29,31};
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         // Iterate over house objects and init properties

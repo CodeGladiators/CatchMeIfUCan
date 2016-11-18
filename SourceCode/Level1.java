@@ -40,7 +40,7 @@ public class Level1 extends World
         else{
             Greenfoot.stop();
         }
-        System.out.println("Your Score:" + timer);
+        //System.out.println("Your Score:" + timer);
     }
 
     
