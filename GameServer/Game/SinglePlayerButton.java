@@ -11,7 +11,6 @@ public class SinglePlayerButton extends GameMenuComponents
 {   
     String username = "";
     String text = "Enter username";
-    private Client client = new Client();
     public void act() 
     {
         // Add your action code here.
@@ -23,9 +22,8 @@ public class SinglePlayerButton extends GameMenuComponents
 
                 if(!username.equals("")){
                     JOptionPane.showMessageDialog(null, "Hello "+username);
-                    client.getUsername(username);
                     Greenfoot.setWorld(new Level1());
-
+                  
                 }
             }
         }
