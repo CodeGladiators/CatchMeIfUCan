@@ -1,22 +1,12 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 
-/**
- * Write a description of class Level4 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Level3 extends World
 {
     public Counter actCounter;
     private int timer = 3600;
-    /**
-     * Constructor for objects of class Level4.
-     * 
-     */
+
     public Level3()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1024, 600, 1); 
         prepare();
         actCounter = new Counter("Hours Left: ");
@@ -102,10 +92,9 @@ public class Level3 extends World
         
         // adding police car to game level
         Police police = new Police();
+        police.setImage("PoliceCarSmall.png");
         addObject(police,houses[14].getX()+40+2*x,houses[1].getY()-y+50);
         police.setRotation(90);
-
-
         
         // init tree objects
         Tree[] pineTrees = new Tree[31];

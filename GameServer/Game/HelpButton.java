@@ -1,20 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class HelpButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class HelpButton extends GameMenuComponents
 {
-    /**
-     * Act - do whatever the HelpButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public void act() 
     {
-        // Add your action code here.
         moveInAnimation();
     }    
 
@@ -23,5 +13,5 @@ public class HelpButton extends GameMenuComponents
             setLocation(getX(), getY()-10);
         }
     }
-    
+
 }

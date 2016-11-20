@@ -1,25 +1,15 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Tree here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Tree extends Actor
 {
     private int x;
     private int y;
-    private Actor policeRemoved=null;
+    private Actor policeRemoved = null;
 
-    /**
-     * Act - do whatever the Tree wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         Actor car;
-        car=getOneObjectAtOffset(0,0,Police.class);
+        car = getOneObjectAtOffset(0,0,Police.class);
 
         if(car!=null && policeRemoved==null){
             World world=getWorld();

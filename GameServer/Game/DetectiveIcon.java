@@ -1,11 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class DetectiveIcon here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class DetectiveIcon extends GameMenuComponents
 {
     
@@ -22,7 +16,6 @@ public class DetectiveIcon extends GameMenuComponents
             move(2);
             
         }else{
-          
             move(3);
         }
         // if moves out of screen, start from the left edge again

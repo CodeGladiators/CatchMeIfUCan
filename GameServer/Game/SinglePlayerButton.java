@@ -1,34 +1,12 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import javax.swing.JOptionPane;
+import greenfoot.*;  
 
-/**
- * Write a description of class SinglePlayerButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class SinglePlayerButton extends GameMenuComponents
 {   
-    String username = "";
-    String text = "Enter username";
+    
     public void act() 
     {
-        // Add your action code here.
-
-        if (Greenfoot.mouseClicked(this))
-        {
-            if(username.equals("")){
-                username = JOptionPane.showInputDialog(text);
-
-                if(!username.equals("")){
-                    JOptionPane.showMessageDialog(null, "Hello "+username);
-                    Greenfoot.setWorld(new Level1());
-                  
-                }
-            }
-        }
-
         moveInAnimation();
+        clickListener();
     }
 
     public void moveInAnimation(){
@@ -37,5 +15,11 @@ public class SinglePlayerButton extends GameMenuComponents
         }
     }
 
+    public void clickListener(){
+        if (Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level1());
+        }
+    }
     
 }

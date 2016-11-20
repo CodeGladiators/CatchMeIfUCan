@@ -1,7 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
 import java.awt.*;
 /**
- * Write messages on the screen.
+ * Writes messages on the screen.
  * 
  * @author Ashutosh Singh
  * @email ashutosh.singh@sjsu.edu
@@ -10,14 +10,14 @@ import java.awt.*;
 public class Instructions extends Actor
 {
 
-    public Instructions(String str){
-        setImage(new GreenfootImage(str,28,Color.BLACK,Color.WHITE));
+    public Instructions(String text){
+        setImage(new GreenfootImage(text, 28, Color.BLACK, Color.WHITE));
     }
 
     /**
-     * Update the messages on the screen.
+     * Updates the messages on the screen.
      */
-    public void Update(String text){
+    public void update(String text){
 
         GreenfootImage img = getImage();
         img.clear();

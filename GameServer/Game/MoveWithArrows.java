@@ -8,31 +8,30 @@ import greenfoot.*;
  */
 public class MoveWithArrows  
 {
-    private int x;
-    private Actor officer = null;
+    private Actor actor = null;
   
     public MoveWithArrows(Actor actor)
     {
-        officer = actor;
+        this.actor = actor;
     }
 
     public void Move(int speed)
     {
         if(Greenfoot.isKeyDown("right")){
-            officer.setRotation(0);
-            officer.move(speed);
+            actor.setRotation(0);
+            actor.move(speed);
         } 
         if(Greenfoot.isKeyDown("down")){
-            officer.setRotation(90);
-            officer.move(speed);
+            actor.setRotation(90);
+            actor.move(speed);
         } 
         if(Greenfoot.isKeyDown("up")){
-            officer.setRotation(270);
-            officer.move(speed);
+            actor.setRotation(270);
+            actor.move(speed);
         } 
         if(Greenfoot.isKeyDown("left")){
-            officer.setRotation(-180);
-            officer.move(speed);
+            actor.setRotation(-180);
+            actor.move(speed);
         }
     }
 }

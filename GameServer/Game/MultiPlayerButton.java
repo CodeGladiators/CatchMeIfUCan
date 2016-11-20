@@ -1,11 +1,6 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import javax.swing.JOptionPane;
-/**
- * Write a description of class MultiPlayerButton here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class MultiPlayerButton extends GameMenuComponents
 {
     String username = "";

@@ -109,6 +109,7 @@ public class Level4 extends World
 
         // adding police car to game level
         Police police = new Police();
+        police.setImage("PoliceCarSmall.png");
         addObject(police,houses[1].getX()+2*x,houses[1].getY()-y);
 
         // adding hours left
