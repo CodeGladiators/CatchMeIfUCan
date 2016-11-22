@@ -7,9 +7,10 @@ public class GameWorld extends World
     public GameWorld()
     {   
         super(1024, 768, 1); 
-        //Greenfoot.setWorld(new GameMenu());
+        Greenfoot.setWorld(new GameMenu());
         // Use for testing purpose  
-        Greenfoot.setWorld(new Level4());
+        //Greenfoot.setWorld(new Level4());
+        //Greenfoot.setWorld(new Help());
     }
 
     public void act(){
