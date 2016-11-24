@@ -6,7 +6,9 @@ public class HelpButton extends GameMenuComponents
     public void act() 
     {
         moveInAnimation();
+        
         help();
+
     }    
 
     public void moveInAnimation(){
@@ -14,10 +16,12 @@ public class HelpButton extends GameMenuComponents
             setLocation(getX(), getY()-10);
         }
     }
+
     public void help()
     {
         if (Greenfoot.mouseClicked(this))
         {
+            
             Greenfoot.setWorld(new Help());
         }
     }
