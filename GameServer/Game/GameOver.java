@@ -17,6 +17,21 @@ public class GameOver extends Actor
         int topY = (height - inner.getHeight())/2;
         outer.drawImage(inner, topX, topY);
         setImage(outer);
+        postScore();
+    }
+
+    public void postScore(){
+        try{
+            Player player=Player.getInstance("");
+            System.out.println("My Score: "+ player.getScore());
+            Client client=new Client("http://localhost:8080/scoreboard");
+            Scoreboard board=client.postScore();
+            //Greenfoot.setWorld(new GameMenu());
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void act(){
