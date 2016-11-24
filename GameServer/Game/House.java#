@@ -80,7 +80,7 @@ public class House extends Actor{
                     player.addToScore(score);
                     System.out.println("My Score: "+ player.getScore());
                     
-                    Client client=new Client(Constant.URL.scoreboard);
+                    Client client=new Client(constant.);
                     Scoreboard board=client.postScore();
                     
                     //Greenfoot.setWorld(new GameMenu());

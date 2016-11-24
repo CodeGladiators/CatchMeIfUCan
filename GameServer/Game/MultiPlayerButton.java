@@ -6,10 +6,10 @@ import java.io.IOException;
 
 public class MultiPlayerButton extends GameMenuComponents
 {
-    private String url="http://localhost:8080/register";
+    //private String url="http://localhost:8080/register";
     String username = "";
     String text = "Enter username";
-    private Client client = new Client(url);
+    private Client client = new Client(Constant.URL.register);
 
     public void act() 
     {

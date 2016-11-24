@@ -24,7 +24,7 @@ public class GameOver extends Actor
         try{
             Player player=Player.getInstance("");
             System.out.println("My Score: "+ player.getScore());
-            Client client=new Client("http://localhost:8080/scoreboard");
+            Client client=new Client(Constant.URL.scoreboard);
             Scoreboard board=client.postScore();
             //Greenfoot.setWorld(new GameMenu());
         }

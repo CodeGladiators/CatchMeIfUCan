@@ -10,8 +10,6 @@ import java.io.IOException;
 
 public class Client {
 
-    private String URL = "http://localhost:8080/game" ;
-    private String registerUrl="http://localhost:8080/register" ;
     ClientResource client ; 
 
     public Client(String url) {
