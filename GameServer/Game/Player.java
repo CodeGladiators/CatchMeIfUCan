@@ -25,6 +25,12 @@ public class Player
         return instance;
     }
 
+    public void setName(String name)
+    {
+        // put your code here
+        this.name=name;
+    }
+
     public int getScore()
     {
         // put your code here
