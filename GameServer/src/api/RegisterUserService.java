@@ -16,22 +16,24 @@ public class RegisterUserService extends ServerResource {
 		JSONObject request = jsonRep.getJsonObject();
 		String username = request.getString("username");
 
-		Iterator userListIterator = ((ListIterator) Game.getInstance()).getIterator();
+		Iterator userListIterator = Game.getInstance().getIterator();
 
 		JSONObject response = new JSONObject();
 
+		// check if user already exists
 		while (userListIterator.hasNext()) {
 			User user = (User) userListIterator.next();
 
 			if (user.getUsername().equals(username)) {
-				System.out.println("username already exists");
 				response.put("statusCode", 401);
 				return new JsonRepresentation(response);
 			}
 		}
 
-		User user = new User(username);
-		Game.getInstance().getUserList().add(user);
+		// otherwise register user
+		Game.getInstance().addUser(new User(username));
+
+		response.put("username", username);
 		response.put("statusCode", 200);
 
 		return new JsonRepresentation(response);

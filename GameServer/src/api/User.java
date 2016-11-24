@@ -5,6 +5,9 @@ public class User {
 	private String username;
 	private long score;
 
+	public User() {
+	}
+
 	public User(String username) {
 		this.username = username;
 	}
@@ -15,6 +18,10 @@ public class User {
 
 	public long getScore() {
 		return score;
+	}
+
+	public void setScore(long score) {
+		this.score = score;
 	}
 
 }

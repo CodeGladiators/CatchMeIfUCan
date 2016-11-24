@@ -1,47 +1,35 @@
 package api;
 
-import org.json.* ;
-import org.restlet.representation.* ;
-import org.restlet.ext.json.* ;
-import org.restlet.resource.* ;
+import org.json.*;
+import org.restlet.representation.*;
+import org.restlet.ext.json.*;
+import org.restlet.resource.*;
 
 public class GameResource extends ServerResource {
 
+	@Get
+	public Representation get() throws JSONException {
 
-    @Get
-    public Representation get() throws JSONException {
+		JSONObject json = new JSONObject();
 
-        //String banner = machine.toString() ;
-        //int count = machine.getCount() ;
-        //String state = machine.getStateString() ;
+		return new JsonRepresentation(json);
+	}
 
-        JSONObject json = new JSONObject() ;
-        //json.put( "banner", banner ) ;
-        //json.put( "count", count ) ;
-        //json.put( "state", state ) ;
+	@Post
+	public Representation post(JsonRepresentation jsonRep) {
 
-        return new JsonRepresentation ( json ) ;
-    }
+		JSONObject json = jsonRep.getJsonObject();
+		String action = json.getString("action");
+		System.out.println("action: " + action);
 
+		if (action.equals("getUsername"))
+			System.out.println(json.getString("username"));
+		if (action.equals("getScore"))
+			System.out.println("score");
 
-    @Post
-    public Representation post(JsonRepresentation jsonRep) {
+		JSONObject response = new JSONObject();
 
-        JSONObject json = jsonRep.getJsonObject() ;
-        String action = json.getString("action") ;
-        System.out.println( "action: " + action ) ;
+		return new JsonRepresentation(response);
+	}
 
-        if ( action.equals( "getUsername") )
-            System.out.println(json.getString("username"));
-        if ( action.equals( "getScore") )
-            System.out.println("score");
-
-        JSONObject response = new JSONObject() ;
-        //String state = machine.getStateString() ;
-        //response.put( "result", state ) ;
-
-        return new JsonRepresentation ( response ) ;
-
-    }
 }
-

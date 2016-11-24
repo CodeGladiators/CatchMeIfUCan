@@ -1,31 +1,47 @@
 import greenfoot.*;  
 import javax.swing.JOptionPane;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import java.io.IOException;
 
 public class MultiPlayerButton extends GameMenuComponents
 {
+    private String url="http://localhost:8080/register";
     String username = "";
     String text = "Enter username";
-    private Client client = new Client();
-    
+    private Client client = new Client(url);
+
     public void act() 
     {
         if (Greenfoot.mouseClicked(this))
         {
-            if(username.equals("")){
+            username = "";
+            System.out.println("Multiplayer clicked");
+            try{
+                System.out.println("Inside try");
                 username = JOptionPane.showInputDialog(text);
-                
-                if(!username.equals("")){
+                System.out.println("Inside if : "+username);
+
+                //Check if username is empty or duplicate
+                if(!username.equals("")&& client.checkDuplicateUsername(username)){
                     JOptionPane.showMessageDialog(null, "Hello "+username);
-                    client.getUsername(username);
+                    Player player=Player.getInstance("username");
                     Greenfoot.setWorld(new Level1());
                 }
+                else{
+                    JOptionPane.showMessageDialog(null, "Either empty or duplicate username entered. Please try again");
+                }
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                e.printStackTrace();
             }
         }
 
         moveInAnimation();
     }    
-    
-      public void moveInAnimation(){
+
+    public void moveInAnimation(){
         if(getX() > 850){
             move(-5);
         }

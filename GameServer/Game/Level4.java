@@ -15,6 +15,10 @@ public class Level4 extends World
         prepare();
     }
 
+    public int getScore(){
+        return timer;
+    }
+
     public void act(){
         if(timer > 0){
             timer--;

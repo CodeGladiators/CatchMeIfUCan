@@ -18,7 +18,7 @@ public class GameServer extends Application {
 		Router router = new Router(getContext());
 		router.attach("/game", GameResource.class);
 		router.attach("/register", RegisterUserService.class);
-		router.attach("/getusers", GetUsersService.class);
+		router.attach("/scoreboard", ScoreboardService.class);
 		return router;
 	}
 }

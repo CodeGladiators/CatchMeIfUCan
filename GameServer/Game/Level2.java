@@ -29,12 +29,16 @@ public class Level2 extends World
         else{
             Greenfoot.stop();
         }
-       // System.out.println("Your Score:" + timer);
+        // System.out.println("Your Score:" + timer);
     }
 
     public void bumpCounter()
     {
         actCounter.change();
+    }
+
+    public int getScore(){
+        return timer;
     }
 
     public void prepare(){

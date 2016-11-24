@@ -22,7 +22,11 @@ public class Game implements ListIterator {
 		return singleInstance;
 	}
 
-	public ArrayList<User> getUserList() {
+	public void addUser(User user) {
+		listOfUsers.add(user);
+	}
+
+	public ArrayList<User> getListOfUsers() {
 		return listOfUsers;
 	}
 

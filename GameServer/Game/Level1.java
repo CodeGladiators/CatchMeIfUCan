@@ -11,6 +11,7 @@ public class Level1 extends World
 {
     public Counter actCounter;
     private int timer = 3600;
+    
     /**
      * Constructor for objects of class Level1.
      * 
@@ -21,7 +22,6 @@ public class Level1 extends World
         super(1024, 600, 1); 
         // prepare level 1
         prepare();
-
         actCounter = new Counter("Hours Left: ");
         actCounter.setValue(3);
         addObject(actCounter, 900, 20);
@@ -31,7 +31,11 @@ public class Level1 extends World
     {
         actCounter.change();
     }
-
+    
+    public int getScore(){
+        return timer;
+    }
+    
     public void act(){
         if(timer > 0){
             timer--;
@@ -42,7 +46,6 @@ public class Level1 extends World
         //System.out.println("Your Score:" + timer);
     }
 
-    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

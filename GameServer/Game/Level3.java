@@ -30,6 +30,10 @@ public class Level3 extends World
     }
     
 
+    public int getScore(){
+        return timer;
+    }
+
     public void prepare()
     {
         // init house objects-15 houses- which is as per 2^n-1 
