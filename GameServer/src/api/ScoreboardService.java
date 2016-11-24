@@ -1,4 +1,4 @@
-package 	api;
+package api;
 
 import java.util.Iterator;
 
@@ -19,7 +19,10 @@ public class ScoreboardService extends ServerResource {
 
 		String username = request.getString("username");
 		long userscore = request.getLong("score");
-
+		
+		System.out.println(username);
+		System.out.println(userscore);
+		
 		Iterator userListIterator = Game.getInstance().getIterator();
 		while (userListIterator.hasNext()) {
 			User user = (User) userListIterator.next();

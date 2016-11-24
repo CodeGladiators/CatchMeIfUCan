@@ -31,6 +31,13 @@ public class Player
         return totalScore;
     }
 
+    public void reset()
+    {
+        totalScore=0;
+        instance=null;
+        name="";
+    }
+
     public String getName()
     {
         return name;

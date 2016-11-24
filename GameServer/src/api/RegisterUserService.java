@@ -15,7 +15,8 @@ public class RegisterUserService extends ServerResource {
 
 		JSONObject request = jsonRep.getJsonObject();
 		String username = request.getString("username");
-
+		System.out.println(username);
+			
 		Iterator userListIterator = Game.getInstance().getIterator();
 
 		JSONObject response = new JSONObject();

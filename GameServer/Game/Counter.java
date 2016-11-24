@@ -79,6 +79,8 @@ public class Counter extends Actor
         if (value > 0) {
             value--;
             updateImage();
+        }else{
+            GameOver gameOver=new GameOver();
         }
     }
 
