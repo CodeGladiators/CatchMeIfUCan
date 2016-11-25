@@ -14,7 +14,7 @@ public class Player
 
     private Player(String n)
     {
-        name=n;
+        this.name=n;
     }
 
     public static Player getInstance(String n) {
@@ -25,31 +25,27 @@ public class Player
         return instance;
     }
 
-    public void setName(String name)
-    {
-        // put your code here
-        this.name=name;
-    }
 
     public int getScore()
     {
         // put your code here
-        return totalScore;
+        return instance.totalScore;
     }
 
     public void reset()
     {
-        totalScore=0;
+        instance.totalScore=0;
+        instance.name="";
         instance=null;
-        name="";
+        
     }
 
     public String getName()
     {
-        return name;
+        return instance.name;
     }
 
     public void addToScore(int score){
-        totalScore+=score;
+        instance.totalScore+=score;
     }
 }

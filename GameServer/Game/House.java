@@ -79,10 +79,10 @@ public class House extends Actor{
                     Player player=Player.getInstance("");
                     player.addToScore(score);
                     System.out.println("My Score: "+ player.getScore());
-                    
+
                     Client client=new Client(Constant.URL.scoreboard);
                     Scoreboard board=client.postScore();
-                    
+
                     //Greenfoot.setWorld(new GameMenu());
                 }
                 catch(Exception e){
