@@ -25,7 +25,8 @@ public class MultiPlayerButton extends GameMenuComponents
                 //Check if username is empty or duplicate
                 if(!username.equals("")&& client.checkDuplicateUsername(username)){
                     JOptionPane.showMessageDialog(null, "Hello "+username);
-                    Player player=Player.getInstance(username);
+                    Player player=Player.getInstance();
+                    player.setName(username);
                     //player.setName(username);
                     Greenfoot.setWorld(new Level1());
                 }

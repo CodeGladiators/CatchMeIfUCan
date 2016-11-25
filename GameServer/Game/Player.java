@@ -8,44 +8,50 @@ public class Player
 {
     // instance variables - replace the example below with your own
     private static Player instance = null;
-
     private String name;
     private int totalScore;
-
-    private Player(String n)
+    
+    private String username;
+    private long score;
+    
+    private Player()
     {
-        this.name=n;
+
     }
 
-    public static Player getInstance(String n) {
+    public static Player getInstance() {
         if(instance == null) {
-            instance = new Player(n);
+            instance = new Player();
         }
 
         return instance;
     }
 
+    public void setName(String name)
+    {
+        // put your code here
+        this.name=name;
+    }
 
     public int getScore()
     {
         // put your code here
-        return instance.totalScore;
+        return totalScore;
     }
 
     public void reset()
     {
-        instance.totalScore=0;
-        instance.name="";
-        instance=null;
-        
+        this.totalScore=0;
+        this.name="";
+        //instance=null;        
     }
 
     public String getName()
     {
-        return instance.name;
+        return name;
     }
 
     public void addToScore(int score){
-        instance.totalScore+=score;
+        this.totalScore+=score;
     }
 }

@@ -22,10 +22,11 @@ public class GameOver extends Actor
 
     public void postScore(){
         try{
-            Player player=Player.getInstance("");
+            Player player=Player.getInstance();
             System.out.println("My Score: "+ player.getScore());
             Client client=new Client(Constant.URL.scoreboard);
-            Scoreboard board=client.postScore();
+            Player[] board=client.postScore();
+            System.out.println("Resetting values");
             player.reset();
             //Greenfoot.setWorld(new GameMenu());
         }

@@ -49,9 +49,9 @@ public class Client {
         client.post(new JsonRepresentation(json_getScore), MediaType.APPLICATION_JSON);
     }
 
-    public Scoreboard postScore() throws JsonParseException, JsonMappingException, IOException {
+    public Player[] postScore() throws JsonParseException, JsonMappingException, IOException {
 
-        Player player=Player.getInstance("");
+        Player player=Player.getInstance();
         JSONObject json_username = new JSONObject();
         json_username.put("username", player.getName());
         json_username.put("score", player.getScore());
@@ -63,10 +63,16 @@ public class Client {
         String result=representation.getText();
         System.out.println("Final Score: "+ result);
         ObjectMapper mapper = new ObjectMapper();
-        Scoreboard board = mapper.readValue(result.getBytes(), Scoreboard.class);
         //Reset player
+        System.out.println("Resetting values");
         player.reset();
-        return board;
+
+        Player[] players = mapper.readValue(result.getBytes(), Player[].class);
+
+        System.out.println(player.getName());
+        System.out.println(player.getScore());
+
+        return players;
     }
 
     public String toString() {
