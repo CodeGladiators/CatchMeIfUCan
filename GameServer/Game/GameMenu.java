@@ -28,5 +28,9 @@ public class GameMenu extends World
 
         HelpButton helpButton = new HelpButton();
         addObject(helpButton,720 , getHeight());        
+
+        TutorialButton tutorialButton = new TutorialButton();
+        addObject(tutorialButton,500 , getHeight());        
+
     }
 }

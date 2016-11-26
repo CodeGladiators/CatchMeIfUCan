@@ -15,17 +15,17 @@ public class Help extends World
 
     private void prepare(){
 
-        ThiefIcon thiefIcon = new ThiefIcon();
-        addObject(thiefIcon,900 ,440);
+        //ThiefIcon thiefIcon = new ThiefIcon();
+        //addObject(thiefIcon,900 ,440);
 
-        DetectiveIcon detectiveIcon = new DetectiveIcon();
-        addObject(detectiveIcon,-200 ,100);
+        //DetectiveIcon detectiveIcon = new DetectiveIcon();
+        //addObject(detectiveIcon,-200 ,100);
 
         Back back = new Back();
         addObject(back,900 ,500);
         
         //Added to remove actors from reducing readability
-        removeActors();
+        //removeActors();
     }
 
     public void removeActors()
