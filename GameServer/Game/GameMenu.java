@@ -24,13 +24,13 @@ public class GameMenu extends World
         addObject(singlePlayerButton,0 ,200);
 
         MultiPlayerButton multiPlayerButton = new MultiPlayerButton();
-        addObject(multiPlayerButton,getWidth(), 200);
+        addObject(multiPlayerButton, getWidth(), 200);
 
         HelpButton helpButton = new HelpButton();
-        addObject(helpButton,720 , getHeight());        
+        addObject(helpButton, 800 , getHeight());        
 
         TutorialButton tutorialButton = new TutorialButton();
-        addObject(tutorialButton,500 , getHeight());        
+        addObject(tutorialButton, 640 , 0); 
 
     }
 }

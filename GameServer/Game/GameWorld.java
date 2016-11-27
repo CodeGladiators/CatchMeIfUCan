@@ -3,10 +3,14 @@ import greenfoot.*;
 public class GameWorld extends World
 {
     private int timer = 3600;
+    GreenfootSound sound = new GreenfootSound("game_menu_background.mp3");
 
     public GameWorld()
     {   
         super(1024, 768, 1); 
+         
+        sound.play();
+        
         Greenfoot.setWorld(new GameMenu());
         // Use for testing purpose  
         //Greenfoot.setWorld(new Level4());
@@ -22,4 +26,5 @@ public class GameWorld extends World
         }
         //System.out.println("Your Score:" + timer);
     }
+
 }

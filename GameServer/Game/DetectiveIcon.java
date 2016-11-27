@@ -20,8 +20,8 @@ public class DetectiveIcon extends GameMenuComponents
         //}
 
         // if moves out of screen, start from the left edge again
-        //if(getX() == getWorld().getWidth()-10){
-          //  setLocation(0, getY());
-        //}
+        if(getX() == getWorld().getWidth()-10){
+           setLocation(0, getY());
+        }
     }
 }

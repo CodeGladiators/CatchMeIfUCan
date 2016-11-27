@@ -10,8 +10,8 @@ public class TutorialButton extends GameMenuComponents
     }
 
     public void moveInAnimation(){
-        if(getY() > 300){
-            setLocation(getX(), getY()-10);
+        if(getY() < 300){
+            setLocation(getX(), getY()+10);
         }
     }
 
