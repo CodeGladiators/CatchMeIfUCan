@@ -30,11 +30,12 @@ public class Level3 extends World implements ILevel
     }
     
 
-        public void updateScore(GameWorld world){
-        world.updateScore(timer);
+       public void updateScore(){
+        Player player=Player.getInstance();
+        player.addToScore(timer);
+
         System.out.println("Sending Score:" + timer);
     }
-
     public void prepare()
     {
         // init house objects-15 houses- which is as per 2^n-1 

@@ -45,22 +45,15 @@ public class House extends Actor{
 
         }else if (!isLooted && hasThief){
             System.out.println("You Win");      
-            GameWorld world = (GameWorld)this.getWorld();
-            
-            
-            ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-            System.out.println("::::::::::::::::::::::::::::::"+level.getClass().getName());
-            level.updateScore(world);
-           
-            Player player=Player.getInstance();
-            int score= world.getScore();
-            player.addToScore(score);
-            Greenfoot.setWorld((World)level);
 
+            ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
+            level.updateScore();
+            Greenfoot.setWorld((World)level);
             if(this.getWorld().getClass().getName()== "Level4"){
                 try{
                     Client client=new Client(Constant.URL.scoreboard);
                     Player[] board=client.postScore();
+
                     //Greenfoot.setWorld(new GameMenu());
                 }
                 catch(Exception e){

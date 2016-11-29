@@ -12,11 +12,9 @@ public class GameMenu extends World implements ILevel
         prepare();
     }
 
-    public void updateScore(GameWorld world){
-        //world.updateScore(timer);
-        //System.out.println("Sending Score:" + timer);
+    public void updateScore(){
+       //Do Nothing
     }
-    
     public void bumpCounter()
     {
         // Do nothing

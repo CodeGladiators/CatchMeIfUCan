@@ -33,8 +33,10 @@ public class Level2 extends World implements ILevel
         actCounter.change();
     }
     
-    public void updateScore(GameWorld world){
-        world.updateScore(timer);
+    public void updateScore(){
+        Player player=Player.getInstance();
+        player.addToScore(timer);
+
         System.out.println("Sending Score:" + timer);
     }
 

@@ -5,5 +5,5 @@ public interface ILevel
 {
     public abstract void bumpCounter();
 
-    public abstract void updateScore(GameWorld game);
+    public abstract void updateScore();
 }
