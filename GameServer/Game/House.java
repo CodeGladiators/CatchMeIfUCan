@@ -45,10 +45,15 @@ public class House extends Actor{
 
         }else if (!isLooted && hasThief){
             System.out.println("You Win");      
-
+            GameWorld world = (GameWorld)this.getWorld();
+            
+            
             ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-            int score=level.getScore();
+            System.out.println("::::::::::::::::::::::::::::::"+level.getClass().getName());
+            level.updateScore(world);
+           
             Player player=Player.getInstance();
+            int score= world.getScore();
             player.addToScore(score);
             Greenfoot.setWorld((World)level);
 

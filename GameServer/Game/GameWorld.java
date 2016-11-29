@@ -2,7 +2,7 @@ import greenfoot.*;
 
 public class GameWorld extends World
 {
-    private int timer = 3600;
+    private int score;
     GreenfootSound sound = new GreenfootSound("game_menu_background.mp3");
 
     public GameWorld()
@@ -18,13 +18,17 @@ public class GameWorld extends World
     }
 
     public void act(){
-        // is it needed?? TODO:verify with others
-        if(timer > 0){
-            timer--;
-        }else{
-            Greenfoot.stop();
-        }
-        //System.out.println("Your Score:" + timer);
+
     }
 
+     
+    public int getScore(){
+        System.out.println("World Score:" + score);
+        return score;
+    }
+    
+    public void updateScore(int score){
+        this.score = score;
+    }
+    
 }

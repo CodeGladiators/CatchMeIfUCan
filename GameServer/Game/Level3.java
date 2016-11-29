@@ -16,7 +16,7 @@ public class Level3 extends World implements ILevel
 
     public void act(){
         if(timer > 0){
-            timer--;
+            timer =timer-1  ;
         }
         else{
             Greenfoot.stop();
@@ -30,8 +30,9 @@ public class Level3 extends World implements ILevel
     }
     
 
-    public int getScore(){
-        return timer;
+        public void updateScore(GameWorld world){
+        world.updateScore(timer);
+        System.out.println("Sending Score:" + timer);
     }
 
     public void prepare()

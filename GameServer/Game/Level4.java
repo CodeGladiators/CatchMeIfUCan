@@ -14,13 +14,14 @@ public class Level4 extends World implements ILevel
         prepare();
     }
 
-    public int getScore(){
-        return timer;
+    public void updateScore(GameWorld world){
+        world.updateScore(timer);
+        System.out.println("Sending Score:" + timer);
     }
-
+    
     public void act(){
         if(timer > 0){
-            timer--;
+            timer = timer-1;
         } else{
             Greenfoot.stop();
         }

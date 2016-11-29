@@ -4,7 +4,7 @@ import java.util.*;
 public class Level1 extends World implements ILevel
 {
     public Counter actCounter;
-    private int timer = 3600;
+    private int timer;
 
     /**
      * Constructor for objects of class Level1.
@@ -17,6 +17,7 @@ public class Level1 extends World implements ILevel
         // prepare level 1
         prepare();
         createCounter();
+        timer = 3600;
     }
 
     private void createCounter()
@@ -31,13 +32,15 @@ public class Level1 extends World implements ILevel
         actCounter.change();
     }
 
-    public int getScore(){
-        return timer;
+    public void updateScore(GameWorld world){
+        world.updateScore(timer);
+        System.out.println("Sending Score:" + timer);
     }
 
     public void act(){
         if(timer > 0){
             timer--;
+            
         }
         else{
             Greenfoot.stop();
