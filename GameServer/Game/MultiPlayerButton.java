@@ -13,6 +13,17 @@ public class MultiPlayerButton extends GameMenuComponents
 
     public void act() 
     {
+        moveInAnimation();
+        clickListener();
+    }    
+
+    public void moveInAnimation(){
+        if(getX() > 850){
+            move(-5);
+        }
+    }
+
+    public void clickListener(){
         if (Greenfoot.mouseClicked(this))
         {
             username = "";
@@ -40,12 +51,5 @@ public class MultiPlayerButton extends GameMenuComponents
             }
         }
 
-        moveInAnimation();
-    }    
-
-    public void moveInAnimation(){
-        if(getX() > 850){
-            move(-5);
-        }
     }
 }

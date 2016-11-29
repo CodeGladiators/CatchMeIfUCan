@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ILevel
+comment1.params=
+comment1.target=void\ bumpCounter()
+comment2.params=
+comment2.target=int\ getScore()
+numComments=3

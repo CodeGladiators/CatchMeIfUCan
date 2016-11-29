@@ -2,10 +2,9 @@ import greenfoot.*;
 /**
  * Last Level.
  */
-public class Level4 extends World
+public class Level4 extends World implements ILevel
 {
     public Counter actCounter;
-    // TODO- timer value is not proper
     private int timer = 3600;
 
     public Level4()

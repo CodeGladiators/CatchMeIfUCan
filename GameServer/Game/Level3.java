@@ -1,6 +1,6 @@
 import greenfoot.*; 
 
-public class Level3 extends World
+public class Level3 extends World implements ILevel
 {
     public Counter actCounter;
     private int timer = 3600;

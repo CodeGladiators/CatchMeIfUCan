@@ -1,12 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
-/**
- * Write a description of class Level2 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Level2 extends World
+
+public class Level2 extends World implements ILevel
 {
     public Counter actCounter;
     private int timer = 3600;
@@ -20,6 +15,7 @@ public class Level2 extends World
         super(1024, 600, 1); 
         // prepare level 2
         prepare();
+        createCounter();
     }
 
     public void act(){
@@ -107,14 +103,6 @@ public class Level2 extends World
             }
         }
 
-        // adding police car to game level
-        Police police = new Police();
-        addObject(police,150,150);
-
-        // adding hours left
-        actCounter = new Counter("Hours Left: ");
-        actCounter.setValue(4);
-        addObject(actCounter, 900, 20); 
 
         // init tree objects
         Tree[] trees = new Tree[10];
@@ -143,6 +131,23 @@ public class Level2 extends World
         addObject(trees[7],trees[6].getX()+ 2*x , trees[6].getY());
         addObject(trees[8],trees[7].getX()+ 2*x , trees[7].getY());
         addObject(trees[9],houses[8].getX()+ 2*x, trees[8].getY());
+        
+        createPolice();
+    }
+
+    private void createPolice()
+    {
+        // adding police car to game level
+        Police police = new Police();
+        addObject(police,150,150);
+
+    }
+
+    private void createCounter(){
+        // adding hours left
+        actCounter = new Counter("Hours Left: ");
+        actCounter.setValue(4);
+        addObject(actCounter, 900, 20); 
 
     }
 

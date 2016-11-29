@@ -3,7 +3,7 @@ import greenfoot.*;
 /**
  * Game Menu for CatchMeIfUCan
  */
-public class GameMenu extends World
+public class GameMenu extends World implements ILevel
 {
 
     public GameMenu()
@@ -12,6 +12,16 @@ public class GameMenu extends World
         prepare();
     }
 
+    public int getScore(){
+         return 0;
+    }
+
+    public void bumpCounter()
+    {
+        // Do nothing
+    }
+
+    
     private void prepare(){
 
         ThiefIcon thiefIcon = new ThiefIcon();

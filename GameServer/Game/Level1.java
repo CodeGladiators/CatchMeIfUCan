@@ -1,17 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
-/**
- * Write a description of class Level1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Level1 extends World
+public class Level1 extends World implements ILevel
 {
     public Counter actCounter;
     private int timer = 3600;
-    
+
     /**
      * Constructor for objects of class Level1.
      * 
@@ -22,6 +16,11 @@ public class Level1 extends World
         super(1024, 600, 1); 
         // prepare level 1
         prepare();
+        createCounter();
+    }
+
+    private void createCounter()
+    {
         actCounter = new Counter("Hours Left: ");
         actCounter.setValue(3);
         addObject(actCounter, 900, 20);
@@ -31,11 +30,11 @@ public class Level1 extends World
     {
         actCounter.change();
     }
-    
+
     public int getScore(){
         return timer;
     }
-    
+
     public void act(){
         if(timer > 0){
             timer--;
@@ -52,10 +51,21 @@ public class Level1 extends World
      */
     private void prepare()
     {
-        List houses = new ArrayList<House>();
-        List trees = new ArrayList<Tree>();
-        int[] arr = {1,3,5,7};
-        int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
+        createHouses();
+        createTrees();
+
+        createPolice();
+    }
+
+    private void createPolice()
+    {
+        Police police = new Police();
+        addObject(police,100,145);
+    }
+
+    private void createTrees()
+    {
+        ArrayList<Tree> trees = new ArrayList<Tree>();
 
         trees.add(new FigTree(){{
                     setX(983);
@@ -81,6 +91,21 @@ public class Level1 extends World
                     setX(346);
                     setY(505);
                 }});
+
+        // add Trees
+        for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
+            Tree tree = i.next();
+            addObject(tree,tree.getXCoordinate() ,tree.getYCoordinate());
+        }
+    }
+
+    private void createHouses()
+    {
+        int[] arr = {1,3,5,7};
+        int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
+
+        ArrayList<House> houses = new ArrayList<House>();
+
         houses.add(new House(){{
                     setX(134);
                     setY(63);
@@ -133,27 +158,24 @@ public class Level1 extends World
             houseCounter.updateHouseCounter();
             addObject(houseCounter, house.getX(), house.getY()-25);
 
-            if(house.getNumber()==houseValue){
+            if(house.getNumber()==houseValue)
+            {
                 house.setHasThief(true);
 
-            }else{
+            }
+            else
+            {
                 house.setHasThief(false);
             }
 
-            if(house.getNumber()>houseValue){
+            if(house.getNumber()>houseValue)
+            {
                 house.setIsLooted(true);
-            }else{
+            }
+            else
+            {
                 house.setIsLooted(false);
             }
         }
-
-        // add Trees
-        for(Iterator<Tree> i = trees.iterator(); i.hasNext(); ) {
-            Tree tree = i.next();
-            addObject(tree,tree.getXCoordinate() ,tree.getYCoordinate());
-        }
-
-        Police police = new Police();
-        addObject(police,100,145);
     }
 }

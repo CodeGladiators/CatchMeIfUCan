@@ -21,5 +21,4 @@ public class SinglePlayerButton extends GameMenuComponents
             Greenfoot.setWorld(new Level1());
         }
     }
-    
 }
