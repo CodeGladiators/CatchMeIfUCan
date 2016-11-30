@@ -8,7 +8,7 @@ public class GameServer extends Application {
 
 	public static void main(String[] args) throws Exception {
 		Component server = new Component();
-		server.getServers().add(Protocol.HTTP, 8081);
+		server.getServers().add(Protocol.HTTP, 8080);
 		server.getDefaultHost().attach(new GameServer());
 		server.start();
 	}

@@ -1,6 +1,6 @@
 import greenfoot.*;  
 
-public class WoodenHut extends House
+public class WoodenHut extends House implements HouseStrategy
 {
 
     public void act() 
@@ -21,6 +21,10 @@ public class WoodenHut extends House
         }
     } 
 
+    
+    public void getHouseImage(){
+        this.setImage("house2visited.png");
+    }
     
 
 }

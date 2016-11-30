@@ -1,6 +1,6 @@
 import greenfoot.*; 
 
-public class House extends Actor{
+public class House extends Actor implements HouseStrategy{
 
     private int x;
     private int y;
@@ -38,7 +38,7 @@ public class House extends Actor{
     protected void checkThief(){
         if(isLooted){
             System.out.println("You lost 1 hour!!This house has been loooted!!");
-            this.setImage("houseVisited.png");
+            this.getHouseImage();
             getWorld().addObject(new Instructions(LOOTED), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
             bumpCounter();  
             System.out.println(this.getWorld().getClass().getName());
@@ -64,11 +64,15 @@ public class House extends Actor{
         } else{
             System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
             getWorld().addObject(new Instructions(NOT_LOOTED), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
-            this.setImage("houseVisited.png");
+            this.getHouseImage();
             bumpCounter();
         }    
     }
 
+    public void getHouseImage(){
+        this.setImage("houseVisited.png");
+    }
+    
     protected void bumpCounter()
     {
         if(this.getWorld().getClass().getName()== "Level1"){
