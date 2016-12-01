@@ -19,6 +19,7 @@ public class SinglePlayerButton extends GameMenuComponents
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new Level1());
+            Player.getInstance().setGameMode(new SinglePlayer());
            
         }
     }

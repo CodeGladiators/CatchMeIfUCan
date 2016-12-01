@@ -40,6 +40,7 @@ public class MultiPlayerButton extends GameMenuComponents
                     player.setName(username);
                     //player.setName(username);
                     Greenfoot.setWorld(new Level1());
+                    Player.getInstance().setGameMode(new MultiPlayer());
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Either empty or duplicate username entered. Please try again");

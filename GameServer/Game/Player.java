@@ -14,7 +14,7 @@ public class Player
     private String username;
     private long score;
     
-    
+    private GameMode gamemode;
     
   
     
@@ -26,6 +26,7 @@ public class Player
     public static Player getInstance() {
         if(instance == null) {
             instance = new Player();
+            instance.gamemode = new MultiPlayer(); // default game mode
            
         }
 
@@ -58,5 +59,13 @@ public class Player
 
     public void addToScore(int score){
         this.totalScore+=score;
+    }
+    
+     public String getGameMode(){
+        return gamemode.getGameMode();
+    }
+    
+    public void setGameMode(GameMode gamemode){
+        this.gamemode = gamemode;
     }
 }

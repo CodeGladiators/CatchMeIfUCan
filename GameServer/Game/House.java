@@ -50,7 +50,7 @@ public class House extends Actor implements HouseStrategy{
             ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
             level.updateScore();
             Greenfoot.setWorld((World)level);
-            if(this.getWorld().getClass().getName()== "Level4"){
+            if(this.getWorld().getClass().getName()== "Level4" && Player.getInstance().getGameMode().equals("MultiPlayer")){
                 try{
                     Client client=new Client(Constant.URL.scoreboard);
                     Player[] board=client.postScore();
