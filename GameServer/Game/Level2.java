@@ -4,7 +4,9 @@ import java.util.*;
 public class Level2 extends World implements ILevel
 {
     public Counter actCounter;
-    private int timer = 3600;
+    private int timer;
+    Player player;
+    public Bar bar;
 
     /**
      * Constructor for objects of class Level2.
@@ -16,6 +18,10 @@ public class Level2 extends World implements ILevel
         // prepare level 2
         prepare();
         createCounter();
+        timer = 3600;
+        player=Player.getInstance();
+        bar = new Bar(player.getName(), "Fuel", timer, timer);
+        addObject(bar, 100, 530);
     }
 
     public void act(){
@@ -32,11 +38,9 @@ public class Level2 extends World implements ILevel
     {
         actCounter.change();
     }
-    
-    public void updateScore(){
-        Player player=Player.getInstance();
-        player.addToScore(timer);
 
+    public void updateScore(){
+        player.addToScore(timer);
         System.out.println("Sending Score:" + timer);
     }
 
@@ -106,7 +110,6 @@ public class Level2 extends World implements ILevel
             }
         }
 
-
         // init tree objects
         Tree[] trees = new Tree[10];
 
@@ -134,7 +137,7 @@ public class Level2 extends World implements ILevel
         addObject(trees[7],trees[6].getX()+ 2*x , trees[6].getY());
         addObject(trees[8],trees[7].getX()+ 2*x , trees[7].getY());
         addObject(trees[9],houses[8].getX()+ 2*x, trees[8].getY());
-        
+
         createPolice();
     }
 

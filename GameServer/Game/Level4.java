@@ -5,13 +5,28 @@ import greenfoot.*;
 public class Level4 extends World implements ILevel
 {
     public Counter actCounter;
-    private int timer = 3600;
+    private int timer;
+    Player player;
+    public Bar bar;
 
     public Level4()
     {    
         super(1024, 600, 1); 
         // prepare level 4 UI
         prepare();
+        createCounter();
+        timer = 3600;
+        player=Player.getInstance();
+        bar = new Bar(player.getName(), "Fuel", timer, timer);
+        addObject(bar, 100, 530);
+    }
+
+    private void createCounter(){
+        // adding hours left
+        actCounter = new Counter("Hours Left: ");
+        actCounter.setValue(4);
+        addObject(actCounter, 900, 20); 
+
     }
 
     public void updateScore(){

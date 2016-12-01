@@ -5,7 +5,9 @@ public class Level1 extends World implements ILevel
 {
     public Counter actCounter;
     private int timer;
-    GreenfootSound sound = new GreenfootSound("InAction.mp3");
+    GreenfootSound sound;
+    Player player;
+    public Bar bar;
 
     /**
      * Constructor for objects of class Level1.
@@ -19,6 +21,11 @@ public class Level1 extends World implements ILevel
         prepare();
         createCounter();
         timer = 3600;
+        player=Player.getInstance();
+        bar = new Bar(player.getName(), "Fuel", timer, timer);
+        addObject(bar, 100, 530);
+        
+        sound = new GreenfootSound("InAction.mp3");
         sound.setVolume(50);
         sound.play();
     }
@@ -36,7 +43,7 @@ public class Level1 extends World implements ILevel
     }
 
     public void updateScore(){
-        Player player=Player.getInstance();
+
         player.addToScore(timer);
 
         System.out.println("Sending Score:" + timer);
@@ -45,12 +52,18 @@ public class Level1 extends World implements ILevel
     public void act(){
         if(timer > 0){
             timer--;
-            
+            bar.subtract(1);
         }
         else{
-            Greenfoot.stop();
+            if (getObjects(GameOver.class).isEmpty()) showGameOver();
+            return;
         }
         //System.out.println("Your Score:" + timer);
+    }
+
+    private void showGameOver()
+    {
+        addObject(new GameOver(), getWidth() / 2, getHeight() / 2);
     }
 
     /**

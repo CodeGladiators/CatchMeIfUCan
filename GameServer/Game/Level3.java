@@ -3,15 +3,19 @@ import greenfoot.*;
 public class Level3 extends World implements ILevel
 {
     public Counter actCounter;
-    private int timer = 3600;
+    private int timer;
+    Player player;
+    public Bar bar;
 
     public Level3()
     {    
         super(1024, 600, 1); 
         prepare();
-        actCounter = new Counter("Hours Left: ");
-        actCounter.setValue(4);
-        addObject(actCounter, 900, 20); 
+        createCounter();
+        timer = 3600;
+        player=Player.getInstance();
+        bar = new Bar(player.getName(), "Fuel", timer, timer);
+        addObject(bar, 100, 530);
     }
 
     public void act(){
@@ -28,14 +32,22 @@ public class Level3 extends World implements ILevel
     {
         actCounter.change();
     }
-    
 
-       public void updateScore(){
+    private void createCounter(){
+        // adding hours left
+        actCounter = new Counter("Hours Left: ");
+        actCounter.setValue(4);
+        addObject(actCounter, 900, 20); 
+
+    }
+
+    public void updateScore(){
         Player player=Player.getInstance();
         player.addToScore(timer);
 
         System.out.println("Sending Score:" + timer);
     }
+
     public void prepare()
     {
         // init house objects-15 houses- which is as per 2^n-1 
@@ -76,7 +88,7 @@ public class Level3 extends World implements ILevel
             House house = houses[i];
             house.setMoney((i+1)*10);
             house.setHouseNumber(i+1);
-            
+
             //add Money Counter
             // TODO-seems too big
             Counter houseCounter = new Counter(Float.toString(house.getMoney()));
@@ -95,13 +107,13 @@ public class Level3 extends World implements ILevel
                 house.setIsLooted(false);
             }
         }
-        
+
         // adding police car to game level
         Police police = new Police();
         police.setImage("PoliceCarSmall.png");
         addObject(police,houses[14].getX()+40+2*x,houses[1].getY()-y+50);
         police.setRotation(90);
-        
+
         // init tree objects
         Tree[] pineTrees = new Tree[31];
 
