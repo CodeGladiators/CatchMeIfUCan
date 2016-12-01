@@ -14,6 +14,11 @@ public class Player
     private String username;
     private long score;
     
+    public final String SINGLEPLAYER = "single player";
+    public final String MULTIPLAYER = "multi player";
+    
+    private static String playerMode;
+    
     private Player()
     {
 
@@ -22,6 +27,7 @@ public class Player
     public static Player getInstance() {
         if(instance == null) {
             instance = new Player();
+            playerMode = SINGLEPLAYER; // default value
         }
 
         return instance;
