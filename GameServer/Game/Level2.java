@@ -27,6 +27,7 @@ public class Level2 extends World implements ILevel
     public void act(){
         if(timer > 0){
             timer =timer-1  ;
+            bar.subtract(1);
         }
         else{
             Greenfoot.stop();
