@@ -12,6 +12,7 @@ public class GameWorld extends World
         //sound.play();
         
         Greenfoot.setWorld(new GameMenu());
+         //Greenfoot.setWorld(new GameTransition());
         // Use for testing purpose  
         //Greenfoot.setWorld(new Level4());
         //Greenfoot.setWorld(new Help());

@@ -34,7 +34,7 @@ public class House extends Actor implements HouseStrategy{
             checkThief();
         }
     }   
-    
+
     public void checkThief()
     {
         if(isLooted){
@@ -46,10 +46,21 @@ public class House extends Actor implements HouseStrategy{
 
         }else if (!isLooted && hasThief){
             System.out.println("You Win");      
+             Player player=Player.getInstance();
+            if(this.getWorld().getClass().getName()== "Level4"){
 
-            ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-            level.updateScore();
-            Greenfoot.setWorld((World)level);
+                ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
+                level.updateScore();
+                player.setLevel(level);
+                Greenfoot.setWorld((World)level);
+            }
+            else{
+                ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
+                level.updateScore();
+                player.setLevel(level);
+                GameTransition transitionScreen=new GameTransition();
+                Greenfoot.setWorld(transitionScreen);
+            }
             if(this.getWorld().getClass().getName()== "Level4" && Player.getInstance().getGameMode().equals("MultiPlayer")){
                 try{
                     Client client=new Client(Constant.URL.scoreboard);
@@ -68,16 +79,13 @@ public class House extends Actor implements HouseStrategy{
             this.getHouseImage();
             bumpCounter();
         }    
-        
-    }
 
-    
-    
+    }
 
     public void getHouseImage(){
         this.setImage("houseVisited.png");
     }
-    
+
     protected void bumpCounter()
     {
         if(this.getWorld().getClass().getName()== "Level1"){

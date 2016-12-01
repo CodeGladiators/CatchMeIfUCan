@@ -15,9 +15,9 @@ public class Bar extends Actor
 {
     private int barWidth = 100; // the width of the color portion of the bar
     private int barHeight = 20; // the height of the color portion of the bar
-    private int breakPercent = 20; // the percentage amount that changes the color of the bar
-    private int breakValue = 20; // in tandem with breakPercent
-    private boolean usingBreakValue = true;
+    private int breakPercent = 50; // the percentage amount that changes the color of the bar
+    private int breakValue = 50; // in tandem with breakPercent
+    private boolean usingBreakValue = false;
     private boolean breakLow = true; // when true, with low-percent values bar is dangerColor, else safeColor; reversed when false
     private Color backgroundColor = new Color(0, 0, 0, 0); // the background color of the entire object
     private Color textColor = Color.BLACK; // the color of all text and the frame of the bar itself
