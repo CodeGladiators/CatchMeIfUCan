@@ -37,85 +37,42 @@ public class House extends Actor implements HouseStrategy{
     
     public void checkThief()
     {
-        PlayerStrategy p;
-        System.out.println(p.getClass().getName());
-        if(true)
-        {
-            checkThiefMultiPlayer();
-        }
-        else
-        {
-            checkThiefSinglePlayer();
-        }
+        if(isLooted){
+            System.out.println("You lost 1 hour!!This house has been loooted!!");
+            this.getHouseImage();
+            getWorld().addObject(new Instructions(LOOTED), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
+            bumpCounter();  
+            System.out.println(this.getWorld().getClass().getName());
+
+        }else if (!isLooted && hasThief){
+            System.out.println("You Win");      
+
+            ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
+            level.updateScore();
+            Greenfoot.setWorld((World)level);
+            if(this.getWorld().getClass().getName()== "Level4"){
+                try{
+                    Client client=new Client(Constant.URL.scoreboard);
+                    Player[] board=client.postScore();
+
+                    //Greenfoot.setWorld(new GameMenu());
+                }
+                catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
+
+        } else{
+            System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
+            getWorld().addObject(new Instructions(NOT_LOOTED), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
+            this.getHouseImage();
+            bumpCounter();
+        }    
         
     }
 
-    protected void checkThiefMultiPlayer(){
-        if(isLooted){
-            System.out.println("You lost 1 hour!!This house has been loooted!!");
-            this.getHouseImage();
-            getWorld().addObject(new Instructions(LOOTED), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
-            bumpCounter();  
-            System.out.println(this.getWorld().getClass().getName());
-
-        }else if (!isLooted && hasThief){
-            System.out.println("You Win");      
-
-            ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-            level.updateScore();
-            Greenfoot.setWorld((World)level);
-            if(this.getWorld().getClass().getName()== "Level4"){
-                try{
-                    Client client=new Client(Constant.URL.scoreboard);
-                    Player[] board=client.postScore();
-
-                    //Greenfoot.setWorld(new GameMenu());
-                }
-                catch(Exception e){
-                    System.out.println(e.getMessage());
-                }
-            }
-
-        } else{
-            System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
-            getWorld().addObject(new Instructions(NOT_LOOTED), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
-            this.getHouseImage();
-            bumpCounter();
-        }    
-    }
-    protected void checkThiefSinglePlayer(){
-        if(isLooted){
-            System.out.println("You lost 1 hour!!This house has been loooted!!");
-            this.getHouseImage();
-            getWorld().addObject(new Instructions(LOOTED), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
-            bumpCounter();  
-            System.out.println(this.getWorld().getClass().getName());
-
-        }else if (!isLooted && hasThief){
-            System.out.println("You Win");      
-
-            ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-            level.updateScore();
-            Greenfoot.setWorld((World)level);
-            if(this.getWorld().getClass().getName()== "Level4"){
-                try{
-                    Client client=new Client(Constant.URL.scoreboard);
-                    Player[] board=client.postScore();
-
-                    //Greenfoot.setWorld(new GameMenu());
-                }
-                catch(Exception e){
-                    System.out.println(e.getMessage());
-                }
-            }
-
-        } else{
-            System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
-            getWorld().addObject(new Instructions(NOT_LOOTED), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
-            this.getHouseImage();
-            bumpCounter();
-        }    
-    }
+    
+    
 
     public void getHouseImage(){
         this.setImage("houseVisited.png");
