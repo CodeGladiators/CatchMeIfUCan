@@ -5,6 +5,7 @@ public class Level1 extends World implements ILevel
 {
     public Counter actCounter;
     private int timer;
+    GreenfootSound sound = new GreenfootSound("InAction.mp3");
 
     /**
      * Constructor for objects of class Level1.
@@ -18,6 +19,8 @@ public class Level1 extends World implements ILevel
         prepare();
         createCounter();
         timer = 3600;
+        sound.setVolume(50);
+        sound.play();
     }
 
     private void createCounter()

@@ -3,13 +3,13 @@ import greenfoot.*;
 public class GameWorld extends World
 {
     private int score;
-    GreenfootSound sound = new GreenfootSound("game_menu_background.mp3");
+    //GreenfootSound sound = new GreenfootSound("game_menu_background.mp3");
 
     public GameWorld()
     {   
         super(1024, 768, 1); 
          
-        sound.play();
+        //sound.play();
         
         Greenfoot.setWorld(new GameMenu());
         // Use for testing purpose  

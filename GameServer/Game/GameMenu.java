@@ -10,6 +10,7 @@ public class GameMenu extends World implements ILevel
     {   
         super(1024, 600, 1);
         prepare();
+        
     }
 
     public void updateScore(){
