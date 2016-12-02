@@ -34,7 +34,7 @@ public class MultiPlayerButton extends GameMenuComponents
                 System.out.println("Inside if : "+username);
 
                 //Check if username is empty or duplicate
-                if(!username.equals("")&& client.checkDuplicateUsername(username)){
+                if(username!=null && !username.equals("")&& client.checkDuplicateUsername(username)){
                     JOptionPane.showMessageDialog(null, "Hello "+username);
                     Player player=Player.getInstance();
                     player.setName(username);
