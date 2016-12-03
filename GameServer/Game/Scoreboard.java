@@ -12,12 +12,12 @@ import java.util.*;
  *   addObject(new ScoreBoard(800, 600), getWidth() / 2, getHeight() / 2); 
  * </pre>
  * 
- * Where 800 by 600 should be replaced by the desired size of the score board. 
+ * Where 800 by 600 should be replaced by the desired siranke of the score board. 
  * 
  * @author Neil Brown 
  * @version 1.0
  */
-public class ScoreBoard extends Actor
+public class ScoreBoard extends Actor  
 {
     // The vertical gap between user images in the scoreboard:
     private static final int GAP = 10;
@@ -38,18 +38,17 @@ public class ScoreBoard extends Actor
      * You can specify the width and height that the score board should be, but
      * a minimum width of 600 will be enforced.
      */
-    public ScoreBoard(int width, int height,ArrayList<Score> users)
-    {    
+    public ScoreBoard(int width, int height,ArrayList<Score> users) {
         setImage(new GreenfootImage(Math.max(600, width), height)); 
         allPlayers = users;
         drawScores();
     }
-    
+
     private void drawString(String text, int x, int y, Color color, int height)
     {
         getImage().drawImage(new GreenfootImage(text, height, color, new Color (0, true)), x, y);
     }
-    
+
     private void drawScores()
     {
         // 50 pixels is the max height of the user image
@@ -57,36 +56,40 @@ public class ScoreBoard extends Actor
         // Calculate how many users we have room for:
         final int numUsers = ((getImage().getHeight() - (HEADER_TEXT_HEIGHT + 10)) / pixelsPerUser);
         final int topSpace = getImage().getHeight() - (numUsers * pixelsPerUser) - GAP;
-        
+
         getImage().setColor(BACKGROUND_COLOR);
         getImage().fill();
 
         drawString("All Players", 100, topSpace - HEADER_TEXT_HEIGHT - 5, MAIN_COLOR, HEADER_TEXT_HEIGHT);
-        
+
         drawUserPanel(GAP, topSpace, (getImage().getWidth() / 2) - GAP, topSpace + numUsers * pixelsPerUser, allPlayers);
     }
-    
-    private void drawUserPanel(int left, int top, int right, int bottom, List users)
+
+    private void drawUserPanel(int left, int top, int right, int bottom, ArrayList<Score> users)
     {
         getImage().setColor(MAIN_COLOR);
         getImage().drawRect(left, top, right - left, bottom - top);
-        
+
         if (users == null)
             return;
-        
-            drawString("Rank", left + 10, top  , SCORE_COLOR, 14);
-            
-            drawString("Score ", left + 100, top , SCORE_COLOR, 14);
-            
-            drawString("Name", left + 210, top , MAIN_COLOR, 14);
-            
-            
+
+        drawString("Rank", left + 10, top  , SCORE_COLOR, 14);
+
+        drawString("Score ", left + 100, top , SCORE_COLOR, 14);
+
+        drawString("Name", left + 210, top , MAIN_COLOR, 14);
+
+        int i =1;
         Player me = Player.getInstance();
         int y = top + GAP + 18;
-        for (Object obj : users)
+
+        ArrayList<Score> finalEight = getEight(users,  me);
+        for (Object obj : finalEight)
         {
             Score playerData = (Score)obj;            
             Color c;
+            
+            System.out.println(i+":::"+playerData.getName());
             
             if (me != null && playerData.getName().equals(me.getName()))
             {
@@ -101,16 +104,61 @@ public class ScoreBoard extends Actor
             getImage().fillRect(left + 5, y - GAP + 1, right - left - 10, 50 + 2*GAP - 1);
 
             int x = left + 30;
-            
-            
-            
-            drawString(Integer.toString(playerData.getRank()), x, y+18, SCORE_COLOR, 14);
+
+            drawString(Integer.toString(i), x, y+18, SCORE_COLOR, 14);
             x += 80;
-            
+
             drawString(Integer.toString(playerData.getScore()), x, y+18, SCORE_COLOR, 14);
             x += 80;
             drawString(playerData.getName(), x, y + 18, MAIN_COLOR, 14);
             y += 50 + 2*GAP;
+            i++;
         }
+    }
+
+    public ArrayList<Score> getEight(ArrayList<Score> players, Player me){
+        Collections.sort(players, new Comparator<Score>() 
+            {
+                @Override
+                public int compare(Score o1, Score o2) {
+                    if (o1.getScore() > o2.getScore()){
+                        return -1;
+                    }else{
+                        return +1;
+                    }
+                }
+
+            });
+        
+            
+            
+        ArrayList<Score> topPlayers = new ArrayList<Score>();   
+            
+        int rank = 0;
+        for(Score player : players){
+            if(rank >= 7){
+                break;
+            }
+            topPlayers.add(player);
+            System.out.println(rank);
+            rank++;
+        }
+
+        
+        int myRank = 0;
+        for(Score player : players){
+            myRank++;
+            if(player.getName() == me.getName()){
+                break;
+            }
+            
+        }
+        
+        
+        System.out.println("your rank from 0 :::"+myRank);
+        topPlayers.add(players.get(myRank - 1));
+        
+        
+        return topPlayers;
     }
 }
