@@ -20,5 +20,19 @@ public class Score
         return 1;
     }
     
+    
+    
+    public void setName(String name)
+    {
+        // put your code here
+        this.username=name;
+    }
+    
+    
+    public void setScore(int score){
+    
+        this.score = score;
+    }
+
 }
 

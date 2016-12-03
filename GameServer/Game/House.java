@@ -46,12 +46,12 @@ public class House extends Actor implements HouseStrategy{
 
         }else if (!isLooted && hasThief){
             System.out.println("You Win");      
-             Player player=Player.getInstance();
+            Player player=Player.getInstance();
             if(this.getWorld().getClass().getName()== "Level4"){
                 System.out.println(1);
-                //ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-                //level.updateScore();
-                //player.setLevel(level);
+                ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
+                level.updateScore();
+                player.setLevel(level);
                 //Greenfoot.setWorld((World)level);
             }
             else{
@@ -67,16 +67,15 @@ public class House extends Actor implements HouseStrategy{
                     System.out.println(3);
                     Client client=new Client(Constant.URL.scoreboard);
                     Score[] board=client.postScore();
-                    
+
                     ArrayList<Score> otherPlayers = new ArrayList<Score>();
-                    
+
                     for(Score players    : board){
                         otherPlayers.add(players);
                     }
                     System.out.println("here");
                     Greenfoot.setWorld((World)new ScoreboardWorld(otherPlayers));
-                    
-                    
+
                     //Greenfoot.setWorld(new GameMenu());
                 }
                 catch(Exception e){

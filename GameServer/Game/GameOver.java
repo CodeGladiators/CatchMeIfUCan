@@ -17,10 +17,14 @@ public class GameOver extends Actor
         int topY = (height - inner.getHeight())/2;
         outer.drawImage(inner, topX, topY);
         setImage(outer);
-        postScore();
+            postScore();
+        
     }
 
     public void postScore(){
+        
+                if(this.getWorld().getClass().getName()== "Level4" && Player.getInstance().getGameMode().equals("MultiPlayer")){
+
         try{
             Player player=Player.getInstance();
             System.out.println("My Score: "+ player.getScore());
@@ -35,13 +39,22 @@ public class GameOver extends Actor
             }
             Greenfoot.setWorld((World)new ScoreboardWorld(otherPlayers));
 
-            
             //Greenfoot.setWorld(new GameMenu());
         }
         catch(Exception e){
             System.out.println(e.getMessage());
         }
+    }else{
+                ArrayList<Score> otherPlayer = new ArrayList<Score>();
+                
+                Score s = new Score();
+                s.setName(Player.getInstance().getName());
+                s.setScore(Player.getInstance().getScore());
+                
+                otherPlayer.add(s);
+                Greenfoot.setWorld((World)new ScoreboardWorld(otherPlayer));
 
+            }
     }
 
     public void act(){
