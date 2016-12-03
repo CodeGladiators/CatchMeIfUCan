@@ -1,6 +1,6 @@
 import greenfoot.*; 
 import java.awt.Color;
-
+import java.util.*;
 public class GameOver extends Actor
 {
     String text = " GAME OVER! \n YOU LOSE! ";
@@ -25,9 +25,17 @@ public class GameOver extends Actor
             Player player=Player.getInstance();
             System.out.println("My Score: "+ player.getScore());
             Client client=new Client(Constant.URL.scoreboard);
-            Player[] board=client.postScore();
+            Score[] board=client.postScore();
             System.out.println("Resetting values");
             player.reset();
+
+            ArrayList<Score> otherPlayers = new ArrayList<Score>();
+            for(Score players    : board){
+                otherPlayers.add(players);
+            }
+            Greenfoot.setWorld((World)new ScoreboardWorld(otherPlayers));
+
+            
             //Greenfoot.setWorld(new GameMenu());
         }
         catch(Exception e){

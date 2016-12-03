@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ScoreboardWorld
+comment1.params=users
+comment1.target=ScoreboardWorld(java.util.ArrayList)
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=
+comment3.target=void\ act()
+numComments=4

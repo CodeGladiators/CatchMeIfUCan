@@ -1,5 +1,5 @@
 import greenfoot.*; 
-
+import java.util.*;
 public class House extends Actor implements HouseStrategy{
 
     private int x;
@@ -48,13 +48,14 @@ public class House extends Actor implements HouseStrategy{
             System.out.println("You Win");      
              Player player=Player.getInstance();
             if(this.getWorld().getClass().getName()== "Level4"){
-
-                ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-                level.updateScore();
-                player.setLevel(level);
-                Greenfoot.setWorld((World)level);
+                System.out.println(1);
+                //ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
+                //level.updateScore();
+                //player.setLevel(level);
+                //Greenfoot.setWorld((World)level);
             }
             else{
+                System.out.println(2);
                 ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
                 level.updateScore();
                 player.setLevel(level);
@@ -63,9 +64,19 @@ public class House extends Actor implements HouseStrategy{
             }
             if(this.getWorld().getClass().getName()== "Level4" && Player.getInstance().getGameMode().equals("MultiPlayer")){
                 try{
+                    System.out.println(3);
                     Client client=new Client(Constant.URL.scoreboard);
-                    Player[] board=client.postScore();
-
+                    Score[] board=client.postScore();
+                    
+                    ArrayList<Score> otherPlayers = new ArrayList<Score>();
+                    
+                    for(Score players    : board){
+                        otherPlayers.add(players);
+                    }
+                    System.out.println("here");
+                    Greenfoot.setWorld((World)new ScoreboardWorld(otherPlayers));
+                    
+                    
                     //Greenfoot.setWorld(new GameMenu());
                 }
                 catch(Exception e){

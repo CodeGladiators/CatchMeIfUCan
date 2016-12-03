@@ -13,10 +13,10 @@ public class LevelFactory
         {
             return new Level4();
         }
-        else if(name. equalsIgnoreCase ("Level4"))
-        {
-            return new GameMenu();
-        }
+        //else if(name. equalsIgnoreCase ("Level4"))
+        //{
+        //    return new GameMenu();
+        //}
 
         throw new IllegalArgumentException("No such Level");
     }

@@ -81,7 +81,7 @@ public class Level3 extends World implements ILevel
         addObject(houses[14],houses[11].getX(), houses[3].getY());
 
         // TODO-theif placement- not proper
-        int[] arr = {1,3,11,13};
+        int[] arr = {1,3,13,15};
         int houseValue = arr[Greenfoot.getRandomNumber(arr.length)];
 
         // Iterate over house objects and init properties

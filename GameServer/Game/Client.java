@@ -20,7 +20,7 @@ public class Client {
     public Boolean checkDuplicateUsername(String input) throws JsonParseException, JsonMappingException, IOException {
         JSONObject json_username = new JSONObject();
         json_username.put("username", input);
-
+        
         Representation representation = client.post(new JsonRepresentation(json_username), MediaType.APPLICATION_JSON);
         String result=representation.getText();
         ObjectMapper mapper = new ObjectMapper();
@@ -49,7 +49,7 @@ public class Client {
         client.post(new JsonRepresentation(json_getScore), MediaType.APPLICATION_JSON);
     }
 
-    public Player[] postScore() throws JsonParseException, JsonMappingException, IOException {
+    public Score[] postScore() throws JsonParseException, JsonMappingException, IOException {
 
         Player player=Player.getInstance();
         JSONObject json_username = new JSONObject();
@@ -62,12 +62,15 @@ public class Client {
         Representation representation = client.post(new JsonRepresentation(json_username), MediaType.APPLICATION_JSON);
         String result=representation.getText();
         System.out.println("Final Score: "+ result);
+        
+        
+        
         ObjectMapper mapper = new ObjectMapper();
         //Reset player
         System.out.println("Resetting values");
         player.reset();
 
-        Player[] players = mapper.readValue(result.getBytes(), Player[].class);
+        Score[] players = mapper.readValue(result.getBytes(), Score[].class);
 
         System.out.println(player.getName());
         System.out.println(player.getScore());
