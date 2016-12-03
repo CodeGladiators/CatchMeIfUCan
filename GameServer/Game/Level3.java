@@ -6,7 +6,6 @@ public class Level3 extends World implements ILevel
     private int timer;
     Player player;
     public Bar bar;
-    
 
     public Level3()
     {    
@@ -25,7 +24,8 @@ public class Level3 extends World implements ILevel
             bar.subtract(1);
         }
         else{
-            Greenfoot.stop();
+            if (getObjects(GameOver.class).isEmpty()) showGameOver();
+            return;
         }
         //System.out.println("Your Score:" + timer);
     }
@@ -35,18 +35,21 @@ public class Level3 extends World implements ILevel
         actCounter.change();
     }
 
-    
     public int getScore(){
         return timer;
     }
-    
-    
+
     private void createCounter(){
         // adding hours left
         actCounter = new Counter("Hours Left: ");
         actCounter.setValue(4);
         addObject(actCounter, 900, 20); 
 
+    }
+
+    private void showGameOver()
+    {
+        addObject(new GameOver(), getWidth() / 2, getHeight() / 2);
     }
 
     public void updateScore(){

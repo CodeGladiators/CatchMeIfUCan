@@ -30,8 +30,9 @@ public class Level2 extends World implements ILevel
             timer =timer-1  ;
             bar.subtract(1);
         }
-        else{
-            Greenfoot.stop();
+         else{
+            if (getObjects(GameOver.class).isEmpty()) showGameOver();
+            return;
         }
         // System.out.println("Your Score:" + timer);
     }
@@ -41,6 +42,10 @@ public class Level2 extends World implements ILevel
         return timer;
     }
     
+     private void showGameOver()
+    {
+        addObject(new GameOver(), getWidth() / 2, getHeight() / 2);
+    }
 
     public void bumpCounter()
     {

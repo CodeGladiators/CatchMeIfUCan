@@ -26,16 +26,12 @@ public class Level4 extends World implements ILevel
         actCounter = new Counter("Hours Left: ");
         actCounter.setValue(4);
         addObject(actCounter, 900, 20); 
-        
 
     }
-    
+
     public int getScore(){
         return timer;
     }
-    
-    
-    
 
     public void updateScore(){
         Player player=Player.getInstance();
@@ -48,8 +44,10 @@ public class Level4 extends World implements ILevel
         if(timer > 0){
             timer = timer-1;
             bar.subtract(1);
-        } else{
-            Greenfoot.stop();
+        } 
+        else{
+            if (getObjects(GameOver.class).isEmpty()) showGameOver();
+            return;
         }
         // System.out.println("Your Score:" + timer);
     }
@@ -57,6 +55,11 @@ public class Level4 extends World implements ILevel
     public void bumpCounter()
     {
         actCounter.change();
+    }
+
+    private void showGameOver()
+    {
+        addObject(new GameOver(), getWidth() / 2, getHeight() / 2);
     }
 
     public void prepare(){
