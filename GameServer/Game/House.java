@@ -21,7 +21,6 @@ public class House extends Actor implements HouseStrategy{
     {
         // Check if arrow keys are pressed
         checkKeys();
-
         // Remove car if it is inside house
         Actor car;
         car = getOneObjectAtOffset(0,0,Police.class);
@@ -49,15 +48,28 @@ public class House extends Actor implements HouseStrategy{
             Player player=Player.getInstance();
             if(this.getWorld().getClass().getName()== "Level4"){
                 System.out.println(1);
+                ILevel lvl = (ILevel)this.getWorld();
+                int score = lvl.getScore();
+                System.out.println(score);
+                player.addToScore(score);
+                
+              
                 ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-                level.updateScore();
+                //level.updateScore();
                 player.setLevel(level);
                 //Greenfoot.setWorld((World)level);
             }
             else{
-                System.out.println(2);
+                System.out.println(this.getWorld().getClass().getName());
+                
+                
+                ILevel lvl = (ILevel)this.getWorld();
+                int score = lvl.getScore();
+                System.out.println(score);
+                player.addToScore(score);
                 ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
-                level.updateScore();
+                
+                //level.updateScore();
                 player.setLevel(level);
                 GameTransition transitionScreen=new GameTransition();
                 Greenfoot.setWorld(transitionScreen);

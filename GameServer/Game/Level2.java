@@ -16,6 +16,7 @@ public class Level2 extends World implements ILevel
     {    
         super(1024, 600, 1); 
         // prepare level 2
+        
         prepare();
         createCounter();
         timer = 3600;
@@ -34,6 +35,12 @@ public class Level2 extends World implements ILevel
         }
         // System.out.println("Your Score:" + timer);
     }
+    
+    
+    public int getScore(){
+        return timer;
+    }
+    
 
     public void bumpCounter()
     {

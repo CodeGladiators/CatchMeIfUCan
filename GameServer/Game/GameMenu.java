@@ -20,6 +20,10 @@ public class GameMenu extends World implements ILevel
     {
         // Do nothing
     }
+    
+    public int getScore(){
+        return 0;
+    }
 
     
     private void prepare(){

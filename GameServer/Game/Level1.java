@@ -29,6 +29,9 @@ public class Level1 extends World implements ILevel
         sound.setVolume(50);
         sound.play();
     }
+    
+    
+    
 
     private void createCounter()
     {
@@ -61,6 +64,12 @@ public class Level1 extends World implements ILevel
         //System.out.println("Your Score:" + timer);
     }
 
+    
+    public int getScore(){
+        return timer;
+    }
+    
+    
     private void showGameOver()
     {
         addObject(new GameOver(), getWidth() / 2, getHeight() / 2);

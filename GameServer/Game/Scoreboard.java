@@ -123,13 +123,16 @@ public class ScoreBoard extends Actor
                 public int compare(Score o1, Score o2) {
                     if (o1.getScore() > o2.getScore()){
                         return -1;
+                    }else if(o1.getScore() < o2.getScore()){
+                        return 1;                        
                     }else{
-                        return +1;
+                        return 0;
                     }
                 }
 
             });
         
+            
             
             
         ArrayList<Score> topPlayers = new ArrayList<Score>();   
@@ -154,9 +157,11 @@ public class ScoreBoard extends Actor
             
         }
         
+        if(myRank >= 7){
+            topPlayers.add(players.get(myRank - 1));
         
+        }
         System.out.println("your rank from 0 :::"+myRank);
-        topPlayers.add(players.get(myRank - 1));
         
         
         return topPlayers;

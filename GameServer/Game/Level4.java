@@ -26,8 +26,16 @@ public class Level4 extends World implements ILevel
         actCounter = new Counter("Hours Left: ");
         actCounter.setValue(4);
         addObject(actCounter, 900, 20); 
+        
 
     }
+    
+    public int getScore(){
+        return timer;
+    }
+    
+    
+    
 
     public void updateScore(){
         Player player=Player.getInstance();
