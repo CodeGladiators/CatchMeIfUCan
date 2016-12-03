@@ -17,7 +17,7 @@ import java.util.*;
  * @author Neil Brown 
  * @version 1.0
  */
-public class ScoreBoard extends Actor  
+public class Scoreboard extends Actor  
 {
     // The vertical gap between user images in the scoreboard:
     private static final int GAP = 10;
@@ -38,7 +38,7 @@ public class ScoreBoard extends Actor
      * You can specify the width and height that the score board should be, but
      * a minimum width of 600 will be enforced.
      */
-    public ScoreBoard(int width, int height,ArrayList<Score> users) {
+    public Scoreboard(int width, int height,ArrayList<Score> users) {
         setImage(new GreenfootImage(Math.max(600, width), height)); 
         allPlayers = users;
         drawScores();
