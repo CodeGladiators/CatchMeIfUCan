@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
-public class HouseBase extends Actor implements HouseStrategy
+public class HouseBase extends Actor 
 {
 
     private int x;

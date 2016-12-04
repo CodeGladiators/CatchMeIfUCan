@@ -1,6 +1,6 @@
 import greenfoot.*;  
 
-public class WoodenHut extends HouseBase
+public class WoodenHut extends HouseBase implements HouseStrategy
 {
 
     public void act() 
