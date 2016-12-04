@@ -62,7 +62,7 @@ public class Level3 extends World implements ILevel
     public void prepare()
     {
         // init house objects-15 houses- which is as per 2^n-1 
-        House[] houses = new House[15];
+        WoodenHut[] houses = new WoodenHut[15];
         for(int i=0; i<houses.length ; i++){
             houses[i]= new WoodenHut();
         }
@@ -96,7 +96,7 @@ public class Level3 extends World implements ILevel
 
         // Iterate over house objects and init properties
         for(int i=0; i<houses.length; i++) {
-            House house = houses[i];
+            WoodenHut house = houses[i];
             house.setMoney((i+1)*10);
             house.setHouseNumber(i+1);
 
