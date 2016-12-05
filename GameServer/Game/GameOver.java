@@ -24,13 +24,11 @@ public class GameOver extends Actor
     public void postScore(){
        
                 if(Player.getInstance().getGameMode().equals("MultiPlayer")){
-                    System.out.println("Multiplayer");
+                 
         try{
             Player player=Player.getInstance();
-            System.out.println("My Score: "+ player.getScore());
             Client client=new Client(Constant.URL.scoreboard);
             Score[] board=client.postScore();
-            System.out.println("Resetting values");
             player.reset();
 
             ArrayList<Score> otherPlayers = new ArrayList<Score>();
@@ -46,7 +44,7 @@ public class GameOver extends Actor
         }
     }else{
          ArrayList<Score> otherPlayer = new ArrayList<Score>();
-                System.out.println("singlePlayer");
+              
          Score s = new Score();
          s.setName(Player.getInstance().getName());
          s.setScore(Player.getInstance().getScore());

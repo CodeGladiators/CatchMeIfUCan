@@ -27,7 +27,6 @@ public class Level3 extends World implements ILevel
             if (getObjects(GameOver.class).isEmpty()) showGameOver();
             return;
         }
-        //System.out.println("Your Score:" + timer);
     }
 
     public void bumpCounter()
@@ -55,8 +54,6 @@ public class Level3 extends World implements ILevel
     public void updateScore(){
         Player player=Player.getInstance();
         player.addToScore(timer);
-
-        System.out.println("Sending Score:" + timer);
     }
 
     public void prepare()

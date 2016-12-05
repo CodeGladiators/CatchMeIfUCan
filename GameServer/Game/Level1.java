@@ -49,7 +49,6 @@ public class Level1 extends World implements ILevel
 
         player.addToScore(timer);
 
-        System.out.println("Sending Score:" + timer);
     }
 
     public void act(){
@@ -61,7 +60,6 @@ public class Level1 extends World implements ILevel
             if (getObjects(GameOver.class).isEmpty()) showGameOver();
             return;
         }
-        //System.out.println("Your Score:" + timer);
     }
 
     

@@ -89,7 +89,6 @@ public class Scoreboard extends Actor
             Score playerData = (Score)obj;            
             Color c;
             
-            System.out.println(i+":::"+playerData.getName());
             
             if (me != null && playerData.getName().equals(me.getName()))
             {
@@ -143,7 +142,6 @@ public class Scoreboard extends Actor
                 break;
             }
             topPlayers.add(player);
-            System.out.println(rank);
             rank++;
         }
 
@@ -161,7 +159,6 @@ public class Scoreboard extends Actor
             topPlayers.add(players.get(myRank - 1));
         
         }
-        System.out.println("your rank from 0 :::"+myRank);
         
         
         return topPlayers;

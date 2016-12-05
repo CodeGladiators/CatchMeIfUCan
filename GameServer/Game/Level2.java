@@ -34,7 +34,6 @@ public class Level2 extends World implements ILevel
             if (getObjects(GameOver.class).isEmpty()) showGameOver();
             return;
         }
-        // System.out.println("Your Score:" + timer);
     }
     
     
@@ -54,7 +53,6 @@ public class Level2 extends World implements ILevel
 
     public void updateScore(){
         player.addToScore(timer);
-        System.out.println("Sending Score:" + timer);
     }
 
     public void prepare(){

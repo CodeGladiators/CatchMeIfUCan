@@ -24,12 +24,8 @@ public class SinglePlayerButton extends GameMenuComponents
         if (Greenfoot.mouseClicked(this))
         {
             username = "";
-            System.out.println("singleplayer clicked");
             try{
-                System.out.println("Inside try");
                 username = JOptionPane.showInputDialog(text);
-                System.out.println("Inside if : "+username);
-
                 //Check if username is empty or duplicate
                 if(username!=null && !username.equals("")){
                     JOptionPane.showMessageDialog(null, "Hello "+username);

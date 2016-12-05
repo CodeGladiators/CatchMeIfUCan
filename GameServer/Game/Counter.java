@@ -61,7 +61,6 @@ public class Counter extends Actor
      */
     public void act() 
     {
-        //System.out.println("Updating values");
         if (value < target) {
             value++;
             updateImage();
@@ -74,8 +73,7 @@ public class Counter extends Actor
 
     public void change()
     {
-        System.out.println("Updating values");
-
+       
         if (value > 0) {
             value--;
             updateImage();

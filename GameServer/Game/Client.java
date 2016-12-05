@@ -33,7 +33,7 @@ public class Client {
         }
     }
 
-    public void getUsername(String input) {
+    public void S(String input) {
         JSONObject json_username = new JSONObject();
         json_username.put("action", "getUsername");
         json_username.put("username", input);
@@ -55,26 +55,19 @@ public class Client {
         JSONObject json_username = new JSONObject();
         json_username.put("username", player.getName());
         json_username.put("score", player.getScore());
-        System.out.println("Posting Score");
-        System.out.println(player.getName());
-        System.out.println(player.getScore());
         ClientResource client=new ClientResource(Constant.URL.scoreboard);
         Representation representation = client.post(new JsonRepresentation(json_username), MediaType.APPLICATION_JSON);
         String result=representation.getText();
-        System.out.println("Final Score: "+ result);
         
         
         
         ObjectMapper mapper = new ObjectMapper();
         //Reset player
-        System.out.println("Resetting values");
         player.reset();
 
         Score[] players = mapper.readValue(result.getBytes(), Score[].class);
 
-        System.out.println(player.getName());
-        System.out.println(player.getScore());
-
+  
         return players;
     }
 

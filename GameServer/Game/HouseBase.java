@@ -40,18 +40,14 @@ public class HouseBase extends Actor
     public void checkThief()
     {
         if(isLooted){
-            System.out.println("You lost 1 hour!!This house has been loooted!!");
             this.getHouseImage();
             getWorld().addObject(new Instructions(LOOTED), getWorld().getWidth()/2 , getWorld().getHeight()/2 + 250);
             bumpCounter();  
-            System.out.println(this.getWorld().getClass().getName());
         }else if (!isLooted && hasThief){
-            System.out.println("You Win");      
             Player player=Player.getInstance();
             if(this.getWorld().getClass().getName()== "Level4"){
                 ILevel lvl = (ILevel)this.getWorld();
                 int score = lvl.getScore();
-                System.out.println(score);
                 player.addToScore(score);
                 if(Player.getInstance().getGameMode().equals("MultiPlayer")){
                     try{
@@ -75,7 +71,6 @@ public class HouseBase extends Actor
             else{
                 ILevel lvl = (ILevel)this.getWorld();
                 int score = lvl.getScore();
-                System.out.println(score);
                 player.addToScore(score);
                 ILevel level= LevelFactory.createLevel(this.getWorld().getClass().getName());
                 player.setLevel(level);
@@ -83,12 +78,10 @@ public class HouseBase extends Actor
                 Greenfoot.setWorld(transitionScreen);
             }
         } else{
-            System.out.println("You lost 1 hour!!! This house has not been looted yet !! Go back!!");
             getWorld().addObject(new Instructions(NOT_LOOTED), getWorld().getWidth()/3, getWorld().getHeight()/2 + 250);
             this.getHouseImage();
             bumpCounter();
         }    
-
     }
 
     public void getHouseImage(){
@@ -214,6 +207,4 @@ public class HouseBase extends Actor
     {
         return y;
     }
-
-    
 }
