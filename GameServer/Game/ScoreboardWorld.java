@@ -4,7 +4,7 @@ public class ScoreboardWorld extends World
 {
     public ScoreboardWorld(ArrayList<Score> users)
     {   
-        super(1024, 768, 1); 
+        super(1024, 620, 1); 
         prepare();
         addObject(new Scoreboard(800, 600, users), getWidth() *2/ 5, getHeight() / 2); 
     }
