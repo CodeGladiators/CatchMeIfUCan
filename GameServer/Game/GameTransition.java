@@ -1,8 +1,8 @@
 import greenfoot.*;  
 
+//Transition screen to be shown in between levels
 public class GameTransition extends World
 {
-    
     public GameTransition()
     {   
         super(1024, 768, 1); 

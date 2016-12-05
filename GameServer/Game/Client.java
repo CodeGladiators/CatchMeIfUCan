@@ -14,13 +14,12 @@ public class Client {
 
     public Client(String url) {
         client = new ClientResource(url); 
-        // status=new StatusCodes();
     }
 
     public Boolean checkDuplicateUsername(String input) throws JsonParseException, JsonMappingException, IOException {
         JSONObject json_username = new JSONObject();
         json_username.put("username", input);
-        
+
         Representation representation = client.post(new JsonRepresentation(json_username), MediaType.APPLICATION_JSON);
         String result=representation.getText();
         ObjectMapper mapper = new ObjectMapper();
@@ -58,8 +57,7 @@ public class Client {
         ClientResource client=new ClientResource(Constant.URL.scoreboard);
         Representation representation = client.post(new JsonRepresentation(json_username), MediaType.APPLICATION_JSON);
         String result=representation.getText();
-        
-        
+
         
         ObjectMapper mapper = new ObjectMapper();
         //Reset player
@@ -67,7 +65,6 @@ public class Client {
 
         Score[] players = mapper.readValue(result.getBytes(), Score[].class);
 
-  
         return players;
     }
 

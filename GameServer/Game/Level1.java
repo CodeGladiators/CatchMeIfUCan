@@ -5,7 +5,6 @@ public class Level1 extends World implements ILevel
 {
     public Counter actCounter;
     private int timer;
-    GreenfootSound sound;
     Player player;
     public Bar bar;
 
@@ -25,14 +24,8 @@ public class Level1 extends World implements ILevel
         bar = new Bar(player.getName(), "Fuel", timer, timer);
         addObject(bar, 100, 530);
         
-        sound = new GreenfootSound("InAction.mp3");
-        sound.setVolume(50);
-        sound.play();
     }
     
-    
-    
-
     private void createCounter()
     {
         actCounter = new Counter("Hours Left: ");

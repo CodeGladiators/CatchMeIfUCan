@@ -33,6 +33,7 @@ public class Level4 extends World implements ILevel
         return timer;
     }
 
+    //update score in player
     public void updateScore(){
         Player player=Player.getInstance();
         player.addToScore(timer);
@@ -41,6 +42,7 @@ public class Level4 extends World implements ILevel
     public void act(){
         if(timer > 0){
             timer = timer-1;
+            //subtract from bar UI
             bar.subtract(1);
         } 
         else{
