@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 import java.util.*;
-
 /**
  * An actor class that can display a scoreboard, using Greenfoot's
  * UserInfo class.  

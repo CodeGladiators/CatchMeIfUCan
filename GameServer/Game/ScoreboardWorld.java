@@ -6,7 +6,7 @@ public class ScoreboardWorld extends World
     {   
         super(1024, 768, 1); 
         prepare();
-        addObject(new Scoreboard(800, 600, users), getWidth() / 2, getHeight() / 2); 
+        addObject(new Scoreboard(800, 600, users), getWidth() *2/ 5, getHeight() / 2); 
         //Greenfoot.setWorld(new GameMenu());
     }
 
