@@ -1,4 +1,7 @@
-[![Stories in Ready](https://badge.waffle.io/CodeGladiators/CatchMeIfUCan.png?label=in progress&title=In Progress)](https://waffle.io/CodeGladiators/CatchMeIfUCan)
+[![Stories in Done](https://badge.waffle.io/CodeGladiators/CatchMeIfUCan.png?label=done&title=Done)](https://waffle.io/CodeGladiators/CatchMeIfUCan)
+
+[[  http://j.gifs.com/y87jP7.gif | height = 100px ]]
+
 
 Game Music-
 * In Action by veezyn (c) copyright 2016 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/veezyn/54448 Ft: Spinningmerkaba ,  Hans Atom
