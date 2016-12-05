@@ -1,14 +1,10 @@
+# Catch Me If U Can
+*Help the police catch the biggest thief of the world*
+
 [![Stories in Done](https://badge.waffle.io/CodeGladiators/CatchMeIfUCan.png?label=done&title=Done)](https://waffle.io/CodeGladiators/CatchMeIfUCan)
 
 ![](https://gladiatorash.github.io/assets/img/Game.gif)
 	
-
-
-Game Music-
-* In Action by veezyn (c) copyright 2016 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/veezyn/54448 Ft: Spinningmerkaba ,  Hans Atom
-
-# CatchMeIfUCan
-Help the police catch the biggest thief of the world
 
 ## *Features* 
 
@@ -57,3 +53,8 @@ the money. Unlike other games in which luck decides, here whichever player has t
 1. Add more levels 
 2. Add button to restart server
 3. Enhanced user interface
+
+## Game Music-
+* In Action by veezyn (c) copyright 2016 Licensed under a Creative Commons Attribution Noncommercial  (3.0) license. http://dig.ccmixter.org/files/veezyn/54448 Ft: Spinningmerkaba ,  Hans Atom
+
+
